@@ -1,5 +1,5 @@
 class Ajax {
-    getURL(url, success, error) {
+    static getURL(url, success, error) {
 
         // Feature detection
         if (!window.XMLHttpRequest) return;
