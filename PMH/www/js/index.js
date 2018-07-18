@@ -369,28 +369,28 @@ function reqPlan() {
 
     //console.log();
     $.ajax({
-            url: "http://intern.gsz-zak.de/Vertretungsplan/w/" + (((new Date().getDay() == 0) ? (new Date().getWeekNumber() + 1) : (new Date().getWeekNumber()).toString().length == 1) ? "0" : "") + ((new Date().getDay() == 0) ? (new Date().getWeekNumber() + 1) : (new Date().getWeekNumber())) + "/w" + convertClId($('#selCl').find(":selected").val()) + ".htm",
-        })
-        .done(function (data) {
+         url: "http://intern.gsz-zak.de/Vertretungsplan/w/" + (((new Date().getDay() == 0) ? (new Date().getWeekNumber() + 1) : (new Date().getWeekNumber()).toString().length == 1) ? "0" : "") + ((new Date().getDay() == 0) ? (new Date().getWeekNumber() + 1) : (new Date().getWeekNumber())) + "/w" + convertClId($('#selCl').find(":selected").val()) + ".htm",
+     })
+     .done(function(data) {
 
-            loadPlan(data, true);
-            if ($('#selUn option:selected').val() != "x") {
-                //console.log("Untergruppe erkannt!");
-                $.ajax({
-                        url: "http://intern.gsz-zak.de/Vertretungsplan/w/" + (((new Date().getDay() == 0) ? (new Date().getWeekNumber() + 1) : (new Date().getWeekNumber()).toString().length == 1) ? "0" : "") + ((new Date().getDay() == 0) ? (new Date().getWeekNumber() + 1) : (new Date().getWeekNumber())) + "/w" + convertClId($('#selUn').find(":selected").val()) + ".htm",
-                    })
-                    .done(function (data) {
-                        loadPlan(data, false);
-                        setLoad(false);
+         loadPlan(data, true);
+         if ($('#selUn option:selected').val() != "x") {
+             //console.log("Untergruppe erkannt!");
+             $.ajax({
+                     url: "http://intern.gsz-zak.de/Vertretungsplan/w/" + (((new Date().getDay() == 0) ? (new Date().getWeekNumber() + 1) : (new Date().getWeekNumber()).toString().length == 1) ? "0" : "") + ((new Date().getDay() == 0) ? (new Date().getWeekNumber() + 1) : (new Date().getWeekNumber())) + "/w" + convertClId($('#selUn').find(":selected").val()) + ".htm",
+                 })
+                 .done(function(data) {
+                     loadPlan(data, false);
+                     setLoad(false);
 
-                    });
-            } else {
-                setLoad(false);
-            }
+                 });
+         } else {
+             setLoad(false);
+         }
 
 
 
-        });
+     });
 
     //next week
     $.ajax({
