@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>PMH</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+  <link rel='stylesheet prefetch' href='css/epggea.css'>
+<link rel='stylesheet prefetch' href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <div class="loadingPop">
+  <span class="state0"><i class="ion-ios-checkmark-outline"></i>Abgeschlossen</span>
+  <span class="state1"><i class="ion-ios-loop-strong"></i>Lädt</span>
+  
+</div>
+
+<div class="head-bar">
+  <img class="logo" src="https://kevinsieger.de/api/bling/logo.png">PMH App
+</div>
+<div class="sub-header ">
+  <div class="swipe-tabs">
+    <div class="swipe-tab"><i class="ion-ios-calendar-outline"></i></div>
+    <div class="swipe-tab"><i class="ion-ios-medkit-outline"></i></div>
+    <div class="swipe-tab"><i class="ion-ios-people-outline"></i></div>
+    <div class="swipe-tab"><i class="ion-ios-flag-outline"></i></div>
+    <div class="swipe-tab"><i class="ion-ios-gear-outline"></i></div>
+  </div>
+</div>
+<div class="main-container">
+  <div class="swipe-tabs-container ">
+    <div class="swipe-tab-content">
+      <div class="tab-wrapper">
+      
+        <h1 class="theKlasse">Vertretungsplan</h1>
+      <div class="day" id="day0">
+        <span class="dayTitle">Montag</span>
+        <table>
+
+        </table>
+      </div>
+      <div class="day" id="day1">
+        <span class="dayTitle">Dienstag</span>
+        <table>
+
+        </table>
+      </div>
+      <div class="day" id="day2">
+        <span class="dayTitle">Mittwoch</span>
+        <table>
+
+        </table>
+      </div>
+      <div class="day" id="day3">
+        <span class="dayTitle">Donnerstag</span>
+        <table>
+
+        </table>
+      </div>
+      <div class="day" id="day4">
+        <span class="dayTitle">Freitag</span>
+        <table>
+
+        </table>
+      </div>
+      <div class="day" id="day5">
+        <span class="dayTitle">Samstag</span>
+        <table>
+
+        </table>
+        </div>
+      </div>
+    </div>
+    <div class="swipe-tab-content">
+      <div class="tab-wrapper">
+        <h1>Krankmeldung</h1>
+        <p>Melden Sie sich bitte morgens beim für Sie zuständigen Ansprechpartner. Wir bieten Ihnen unter der Funktion E-Mail eine vorgefertigte Mail zur Krankmeldung.</p>
+        <br>
+        <br>
+        <h2>Berufskolleg & TO</h2>
+        Birgit Ertl<br>
+        Gebäude B, Raum 215<br>
+        <a href="tel:07433 938802"><button><i class="ion-ios-telephone"></i>Anrufen</button></a><a href="#"><button onclick="krankMail('Ertl','b.ertl@gsz-bl.de')"class="mail-btn"><i class="ion-ios-email"></i>E-Mail</button></a>
+         <br>
+        <br>
+        <h2>AVdual, VAB-O, TG & Körperpflege</h2>
+        Elena Galvas<br>
+        Gebäude B, Raum 215<br>
+        <a href="tel:07433 938801"><button><i class="ion-ios-telephone"></i>Anrufen</button></a><a href="#"><button onclick="krankMail('Galvas','e.galvas@gsz-bl.de')"class="mail-btn"><i class="ion-ios-email"></i>E-Mail</button></a>
+      <br>
+        <br>
+        <h2>Bau-, Holz-, Farb-, Textil- und Metalltechnik</h2>
+        Sigrid Robortella<br>
+        Gebäude A, Raum 101<br>
+        <a href="tel:07433 938704"><button><i class="ion-ios-telephone"></i>Anrufen</button></a><a href="#"><button onclick="krankMail('Robortella','s.robortella@gsz-bl.de')"class="mail-btn"><i class="ion-ios-email"></i>E-Mail</button></a>
+        <br>
+        <br>
+        <h2>Elektro- und Kfz-Technik</h2>
+        Inge Wütz<br>
+        Gebäude A, Raum 101<br>
+        <a href="tel:07433 938737"><button><i class="ion-ios-telephone"></i>Anrufen</button></a><a href="#"><button onclick="krankMail('Wütz','i.wuetz@gsz-bl.de')"class="mail-btn"><i class="ion-ios-email"></i>E-Mail</button></a>
+      </div></div>
+    <div class="swipe-tab-content">
+      <div class="tab-wrapper">
+        <h1>SMV</h1>
+        <div id="news">
+        </div>
+      </div>
+    
+    
+    </div>
+    <div class="swipe-tab-content">
+      <div class="tab-wrapper">
+        <h1>Mängelmelder</h1>
+        <p>Im Schulgebäude ist etwas beschädigt, unzureichend, unsicher? Mithilfe unseres anonymen Mängelmelders können Sie der Schulverwaltung solche Informationen schnell mitteilen.</p><form id="mae">
+        <textarea name="maeng" placeholder="Hinweis/Beschwerde..." id="maeng"></textarea>
+        <br>
+        <br>
+        
+        <input value="" class="inputfile" type="file" name="file" id="file" accept="image/*" capture="camera">
+        <label class="fileCh" for="file"><i class="ion-ios-camera"></i>Foto</label><br><br>
+        </form>
+        
+        <button onclick="sendM()"><i class="ion-ios-paperplane"></i>Absenden</button>
+      </div>
+    </div>
+    <div class="swipe-tab-content">
+        <div class="tab-wrapper">
+          <h1>Einstellungen</h1>
+          <input id="INvorName" placeholder="Vorname" type="text"></input><br>
+      <input id="INnachName" placeholder="Nachnahme" type="text"></input><br>
+          
+        <select placeholder="Klasse" name="element" id="selCl" class="selectbox" onchange="reqPlan();">
+          
+     <option value="" disabled selected>Klasse</option>   
+          
+<option value="1">_1PruefBKT</option>
+<option value="2">_2PruefBKFH</option>
+<option value="3">_3Pruef2BFS</option>
+<option value="4">_4Pruef</option>
+<option value="5">_5Pruef</option>
+<option value="6">_6PruefTO</option>
+<option value="7">_AVD/2BFS</option>
+<option value="8">1BFAVD1</option>
+<option value="9">1BFAVD1A</option>
+<option value="10">1BFAVD1B</option>
+<option value="11">1BFAVD2</option>
+<option value="12">1BFAVD2A</option>
+<option value="13">1BFAVD2B</option>
+<option value="14">1BFB</option>
+<option value="15">1BFBA</option>
+<option value="16">1BFBB</option>
+<option value="17">1BFE1</option>
+<option value="18">1BFE1A</option>
+<option value="19">1BFE1B</option>
+<option value="20">1BFE1-BT</option>
+<option value="21">1BFE1C</option>
+<option value="22">1BFE1-GS</option>
+<option value="23">1BFE2</option>
+<option value="24">1BFE2A</option>
+<option value="25">1BFE2B</option>
+<option value="26">1BFE2C</option>
+<option value="27">1BFF</option>
+<option value="28">1BFM</option>
+<option value="29">1BFMA</option>
+<option value="30">1BFMB</option>
+<option value="31">1BFMC</option>
+<option value="32">1BFR1</option>
+<option value="33">1BFR1A</option>
+<option value="34">1BFR1B</option>
+<option value="35">1BFR1C</option>
+<option value="36">1BFR2</option>
+<option value="37">1BFR2A</option>
+<option value="38">1BFR2B</option>
+<option value="39">1BFZ</option>
+<option value="40">1BFZA</option>
+<option value="41">1BFZB</option>
+<option value="42">1BK1T1</option>
+<option value="43">1BK1T1A</option>
+<option value="44">1BK1T1B</option>
+<option value="45">1BK1T2</option>
+<option value="46">1BK1T2A</option>
+<option value="47">1BK1T2B</option>
+<option value="48">1BK2T</option>
+<option value="49">1BK2TA</option>
+<option value="50">1BK2TB</option>
+<option value="51">1BKFH1</option>
+<option value="52">1BKFH2</option>
+<option value="53">2BFS2</option>
+<option value="54">2BFSA</option>
+<option value="55">2BFSB</option>
+<option value="56">2BFSC</option>
+<option value="57">Auszeitraum</option>
+<option value="58">B1MA_T</option>
+<option value="59">B1MA_TA</option>
+<option value="60">B1MA_TB</option>
+<option value="61">B1MA_TC</option>
+<option value="62">B2MA_T</option>
+<option value="63">B2MA_TA</option>
+<option value="64">B2MA_TB</option>
+<option value="65">B2ZI</option>
+<option value="66">B2ZIA</option>
+<option value="67">B2ZIB</option>
+<option value="68">B3MA_T</option>
+<option value="69">B3ZI</option>
+<option value="70">B3ZIA</option>
+<option value="71">B3ZIB</option>
+<option value="72">E1ME</option>
+<option value="73">E1MEA</option>
+<option value="74">E1MEB</option>
+<option value="75">E2EG</option>
+<option value="76">E2EGA</option>
+<option value="77">E2EGB</option>
+<option value="78">E2EG-BT</option>
+<option value="79">E2EG-BTA</option>
+<option value="80">E2EG-BTB</option>
+<option value="81">E2EG-EG</option>
+<option value="82">E2GS</option>
+<option value="83">E2GS-BT</option>
+<option value="84">E2GS-GS</option>
+<option value="85">E2ME1</option>
+<option value="86">E2ME1A</option>
+<option value="87">E2ME1B</option>
+<option value="88">E2ME2</option>
+<option value="89">E3EG</option>
+<option value="90">E3EGA</option>
+<option value="91">E3EGB</option>
+<option value="92">E3EG-BT</option>
+<option value="93">E3EG-BTA</option>
+<option value="94">E3EG-BTB</option>
+<option value="95">E3EG-EG</option>
+<option value="96">E3GS</option>
+<option value="97">E3GS-BT</option>
+<option value="98">E3GS-GS</option>
+<option value="99">E3GS-GSA</option>
+<option value="100">E3GS-GSB</option>
+<option value="101">E3ME</option>
+<option value="102">E3MEA</option>
+<option value="103">E3MEB</option>
+<option value="104">E4EG</option>
+<option value="105">E4EGA</option>
+<option value="106">E4EGB</option>
+<option value="107">E4EG-BT</option>
+<option value="108">E4EG-EG</option>
+<option value="109">E4GS</option>
+<option value="110">E4GSA</option>
+<option value="111">E4GSB</option>
+<option value="112">E4ME</option>
+<option value="113">E4MEA</option>
+<option value="114">E4MEB</option>
+<option value="115">F1ML</option>
+<option value="116">F1MLA</option>
+<option value="117">F1MLB</option>
+<option value="118">F1MLC</option>
+<option value="119">F2ML</option>
+<option value="120">F2MLA</option>
+<option value="121">F2MLB</option>
+<option value="122">F2MLC</option>
+<option value="123">F3ML</option>
+<option value="124">F3MLA</option>
+<option value="125">F3MLB</option>
+<option value="126">FFW</option>
+<option value="127">FTAT1</option>
+<option value="128">FTAT2</option>
+<option value="129">FTE1</option>
+<option value="130">FTE2</option>
+<option value="131">FTET1</option>
+<option value="132">FTET2</option>
+<option value="133">FTM1</option>
+<option value="134">FTM1_T</option>
+<option value="135">FTM1_TA</option>
+<option value="136">FTM1_TB</option>
+<option value="137">FTM1A</option>
+<option value="138">FTM1B</option>
+<option value="139">FTM2</option>
+<option value="140">FTM2_T1</option>
+<option value="141">FTM2_T1A</option>
+<option value="142">FTM2_T1B</option>
+<option value="143">FTM2_T2</option>
+<option value="144">FTM2_T2A</option>
+<option value="145">FTM2_T2B</option>
+<option value="146">FTM2_TA</option>
+<option value="147">FTM2_TB</option>
+<option value="148">FTM2A</option>
+<option value="149">FTM2B</option>
+<option value="150">FTM3_T</option>
+<option value="151">FTM3_TA</option>
+<option value="152">FTM3_TB</option>
+<option value="153">K1FR</option>
+<option value="154">K1FRA</option>
+<option value="155">K1FRB</option>
+<option value="156">K1FRC</option>
+<option value="157">K2FR</option>
+<option value="158">K2FRA</option>
+<option value="159">K2FRB</option>
+<option value="160">K2FRC</option>
+<option value="161">K3FR</option>
+<option value="162">K3FRA</option>
+<option value="163">K3FRB</option>
+<option value="164">K3FRC</option>
+<option value="165">M1IM1</option>
+<option value="166">M1IM1A</option>
+<option value="167">M1IM1B</option>
+<option value="168">M1IM2</option>
+<option value="169">M1IM2A</option>
+<option value="170">M1IM2B</option>
+<option value="171">M1IM4</option>
+<option value="172">M1IM4A</option>
+<option value="173">M1IM4B</option>
+<option value="174">M1IM5</option>
+<option value="175">M1IM5A</option>
+<option value="176">M1IM5B</option>
+<option value="177">M1IM6</option>
+<option value="178">M1IM6A</option>
+<option value="179">M1IM6B</option>
+<option value="180">M1IM8U</option>
+<option value="181">M1IM8UA</option>
+<option value="182">M1IM8UB</option>
+<option value="183">M1IM9K</option>
+<option value="184">M2IM1</option>
+<option value="185">M2IM1A</option>
+<option value="186">M2IM1B</option>
+<option value="187">M2IM2</option>
+<option value="188">M2IM2A</option>
+<option value="189">M2IM2B</option>
+<option value="190">M2IM4</option>
+<option value="191">M2IM4A</option>
+<option value="192">M2IM4B</option>
+<option value="193">M2IM5</option>
+<option value="194">M2IM5A</option>
+<option value="195">M2IM5B</option>
+<option value="196">M2IM6</option>
+<option value="197">M2IM6A</option>
+<option value="198">M2IM6B</option>
+<option value="199">M2IM8U</option>
+<option value="200">M2IM8UA</option>
+<option value="201">M2IM8UB</option>
+<option value="202">M2IM9K</option>
+<option value="203">M2WZ</option>
+<option value="204">M2WZA</option>
+<option value="205">M2WZB</option>
+<option value="206">M3IM1Q</option>
+<option value="207">M3IM1QA</option>
+<option value="208">M3IM1QB</option>
+<option value="209">M3IM2_T</option>
+<option value="210">M3IM2_TA</option>
+<option value="211">M3IM2_TB</option>
+<option value="212">M3IM3_T</option>
+<option value="213">M3IM3_TA</option>
+<option value="214">M3IM3_TB</option>
+<option value="215">M3IM4</option>
+<option value="216">M3IM4A</option>
+<option value="217">M3IM4B</option>
+<option value="218">M3IM5</option>
+<option value="219">M3IM5A</option>
+<option value="220">M3IM5B</option>
+<option value="221">M3IM6</option>
+<option value="222">M3IM6A</option>
+<option value="223">M3IM6B</option>
+<option value="224">M3IM9K</option>
+<option value="225">M3WZ</option>
+<option value="226">M3WZA</option>
+<option value="227">M3WZB</option>
+<option value="228">M4IM2</option>
+<option value="229">M4IM2A</option>
+<option value="230">M4IM2B</option>
+<option value="231">M4IM3</option>
+<option value="232">M4IM3A</option>
+<option value="233">M4IM3B</option>
+<option value="234">M4IM4</option>
+<option value="235">M4IM4A</option>
+<option value="236">M4IM4B</option>
+<option value="237">M4IM5</option>
+<option value="238">M4WZ</option>
+<option value="239">M4WZA</option>
+<option value="240">M4WZB</option>
+<option value="241">R1AW1</option>
+<option value="242">R1AW1A</option>
+<option value="243">R1AW1B</option>
+<option value="244">R1AW2</option>
+<option value="245">R1AW2A</option>
+<option value="246">R1AW2B</option>
+<option value="247">R2AW</option>
+<option value="248">R2AWA</option>
+<option value="249">R2AWB</option>
+<option value="250">R2KI1_T</option>
+<option value="251">R2KI1_TA</option>
+<option value="252">R2KI1_TB</option>
+<option value="253">R2KI1_TC</option>
+<option value="254">R2KI2_T</option>
+<option value="255">R2KI2_TA</option>
+<option value="256">R2KI2_TB</option>
+<option value="257">R2PW1</option>
+<option value="258">R2PW1A</option>
+<option value="259">R2PW1B</option>
+<option value="260">R2PW2</option>
+<option value="261">R2PW2A</option>
+<option value="262">R2PW2B</option>
+<option value="263">R3AW</option>
+<option value="264">R3AWA</option>
+<option value="265">R3AWB</option>
+<option value="266">R3KI1_T</option>
+<option value="267">R3KI1_TA</option>
+<option value="268">R3KI1_TB</option>
+<option value="269">R3KI2_T</option>
+<option value="270">R3KI2_TA</option>
+<option value="271">R3KI2_TB</option>
+<option value="272">R3PW1</option>
+<option value="273">R3PW1A</option>
+<option value="274">R3PW1B</option>
+<option value="275">R3PW2</option>
+<option value="276">R3PW2A</option>
+<option value="277">R3PW2B</option>
+<option value="278">R3PW2C</option>
+<option value="279">R4KI_T</option>
+<option value="280">R4KI_TA</option>
+<option value="281">R4KI_TB</option>
+<option value="282">R4KI_TC</option>
+<option value="283">R4PW1</option>
+<option value="284">R4PW1A</option>
+<option value="285">R4PW1B</option>
+<option value="286">R4PW2</option>
+<option value="287">R4PW2A</option>
+<option value="288">R4PW2B</option>
+<option value="289">T1PM1_T</option>
+<option value="290">T1PM1_TA</option>
+<option value="291">T1PM1_TB</option>
+<option value="292">T1PM2_T</option>
+<option value="293">T1TMN</option>
+<option value="294">T1TMNA</option>
+<option value="295">T1TMNB</option>
+<option value="296">T2PM_T</option>
+<option value="297">T2PM_TA</option>
+<option value="298">T2PM_TB</option>
+<option value="299">T2TMN</option>
+<option value="300">T2TMNA</option>
+<option value="301">T2TMNB</option>
+<option value="302">T3MS</option>
+<option value="303">T3MSA</option>
+<option value="304">T3MSB</option>
+<option value="305">T3PM_T</option>
+<option value="306">T3PM_TA</option>
+<option value="307">T3PM_TB</option>
+<option value="308">TGG11_1</option>
+<option value="309">TGG11_1A</option>
+<option value="310">TGG11_1B</option>
+<option value="311">TGG11_4</option>
+<option value="312">TGG11_4A</option>
+<option value="313">TGG11_4B</option>
+<option value="314">TGG12_1</option>
+<option value="315">TGG12_1A</option>
+<option value="316">TGG12_1B</option>
+<option value="317">TGG12_4</option>
+<option value="318">TGG12_4A</option>
+<option value="319">TGG12_4B</option>
+<option value="320">TGG13_1</option>
+<option value="321">TGG13_1A</option>
+<option value="322">TGG13_1B</option>
+<option value="323">TGG13_4</option>
+<option value="324">TGG13_4A</option>
+<option value="325">TGG13_4B</option>
+<option value="326">TGI11_2</option>
+<option value="327">TGI11_2A</option>
+<option value="328">TGI11_2B</option>
+<option value="329">TGI12_2</option>
+<option value="330">TGI12_2A</option>
+<option value="331">TGI12_2B</option>
+<option value="332">TGI13_2</option>
+<option value="333">TGI13_2A</option>
+<option value="334">TGI13_2B</option>
+<option value="335">TGM11_3</option>
+<option value="336">TGM11_3A</option>
+<option value="337">TGM11_3B</option>
+<option value="338">TGM12_3</option>
+<option value="339">TGM12_3A</option>
+<option value="340">TGM12_3B</option>
+<option value="341">TGM13_3</option>
+<option value="342">TGM13_3A</option>
+<option value="343">TGM13_3B</option>
+<option value="344">TGU11_5</option>
+<option value="345">TGU11_5A</option>
+<option value="346">TGU11_5B</option>
+<option value="347">TGU12_5</option>
+<option value="348">TGU12_5A</option>
+<option value="349">TGU12_5B</option>
+<option value="350">TGU13_5</option>
+<option value="351">TGU13_5A</option>
+<option value="352">TGU13_5B</option>
+<option value="353">TO1</option>
+<option value="354">TO1A</option>
+<option value="355">TO1B</option>
+<option value="356">TO2</option>
+<option value="357">TO2A</option>
+<option value="358">TO2B</option>
+<option value="359">VABO1</option>
+<option value="360">VABO2</option>
+<option value="361">VABO3</option>
+<option value="362">Z2TI</option>
+<option value="363">Z2TIA</option>
+<option value="364">Z2TIB</option>
+<option value="365">Z3TI</option>
+<option value="366">Z3TIA</option>
+<option value="367">Z3TIB</option>
+</select>
+    <button onclick="saveInfo();"><i class="ion-ios-checkmark-empty"></i>Speichern</button>
+      </div>
+  </div>
+  </div>
+</div>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='js/epggea.js'></script>
+
+    <script src="js/index.js"></script>
+
+</body>
+</html>

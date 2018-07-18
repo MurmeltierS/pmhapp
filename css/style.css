@@ -1,0 +1,324 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,700,800");
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
+  /* For some Androids */
+  outline: none;
+}
+
+body {
+  font-family: 'Open Sans';
+}
+
+.head-bar {
+  width: calc(100vw - 30px);
+  height: 52px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background: #fff;
+  line-height: 60px;
+  font-size: 20px;
+}
+
+.head-bar .logo {
+  height: 30px;
+  vertical-align: -7.8px;
+  padding-right: 20px;
+}
+
+.swipe-tab i {
+  font-size: 28px;
+}
+
+.tab-wrapper h1 {
+  font-weight: 300;
+  font-size: 2rem;
+  padding-bottom: 0.5rem;
+}
+
+.tab-wrapper h2 {
+  font-weight: 300;
+  font-size: 1.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.tab-wrapper h3 {
+  font-weight: 300;
+  font-size: 1.2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.tab-wrapper {
+  padding: 15px;
+  font-weight: 300;
+  width: calc(100vw - 30px);
+}
+
+b {
+  font-weight: 800;
+}
+
+textarea {
+  width: calc(100vw - 50px);
+  outline: none;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  height: 80px;
+  font-family: Open Sans !important;
+  background: transparent;
+  color: #000;
+  border: 2px solid #ada6a6;
+}
+
+.inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.fileCh i {
+  font-size: 1.5rem;
+  margin-right: 20px;
+  vertical-align: -2.5px;
+}
+
+.fileCh {
+  width: calc(50% - 5px);
+  margin-right: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  height: 28px;
+  background: transparent;
+  color: #ada6a6;
+  border: 2px solid #ada6a6;
+}
+
+button i {
+  font-size: 1.5rem;
+  margin-right: 20px;
+  vertical-align: middle;
+}
+
+button {
+  width: calc(50% - 5px);
+  margin-right: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  background: transparent;
+  color: #F24137;
+  border: 2px solid #F24137;
+}
+
+button.mail-btn {
+  margin-right: 0;
+}
+
+.slick-initialized .swipe-tab-content {
+  position: relative;
+  height: calc(100vh - 102px);
+  overflow-y: scroll;
+}
+@media screen and (min-width: 767px) {
+  .slick-initialized .swipe-tab-content {
+    height: calc(100vh - 102px);
+    overflow-y: scroll;
+  }
+}
+.slick-initialized .swipe-tab {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 50px;
+  background: none;
+  border: 0;
+  color: #757575;
+  cursor: pointer;
+  text-align: center;
+  border-bottom: 2px solid transparent;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.slick-initialized .swipe-tab:hover {
+  color: #000;
+}
+.slick-initialized .swipe-tab.active-tab {
+  border-bottom-color: #000;
+  color: #000;
+  font-weight: bold;
+}
+
+.main-container {
+  padding: 0px;
+  background: #f1f1f1;
+  height: calc(100vh - 102px);
+}
+
+body {
+  font-family: 'Open Sans';
+}
+
+#logo {
+  padding-bottom: 30px;
+}
+
+#selCl {
+  width: calc(50% - 5px);
+  font-weight: 800;
+  font-size: 20px;
+  outline: none;
+}
+
+table {
+  width: calc(100vw - 20px);
+}
+
+table, td {
+  border-collapse: collapse;
+}
+
+td {
+  border-right: 2px solid #E20019;
+  text-align: left;
+  padding: 10px;
+  font-weight: 300;
+  vertical-align: middle;
+}
+
+td:last-child {
+  border-right: none;
+}
+
+.day {
+  float: left;
+  width: calc(100vw - 20px);
+}
+
+.dayTitle {
+  float: left;
+  display: block;
+  width: calc(100vw - 20px);
+  font-weight: 300;
+  color: #F24137;
+  font-size: 30px;
+  line-height: 60px;
+}
+
+input[type="text"] {
+  width: calc(50% - 5px);
+  margin-right: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  background: transparent;
+  color: #ada6a6;
+  border: 2px solid #ada6a6;
+}
+
+select {
+  margin-right: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  background: transparent;
+  color: #ada6a6;
+  border: 2px solid #ada6a6;
+}
+
+.loadingPop {
+  position: fixed;
+  bottom: -10vh;
+  width: 72vw;
+  left: 10vw;
+  padding: 4vw;
+  border-radius: 2vw;
+  background: #fff;
+  color: #F24137;
+  z-index: 150;
+  -webkit-transition: bottom 0.5s ease-out 3s;
+  transition: bottom 0.5s ease-out 3s;
+}
+
+.load {
+  bottom: 4vh !important;
+  -webkit-transition: bottom 0.5s ease-out 0s !important;
+  transition: bottom 0.5s ease-out 0s !important;
+}
+
+.save {
+  bottom: 4vh !important;
+  -webkit-transition: bottom 0.5s ease-out 0s !important;
+  transition: bottom 0.5s ease-out 0s !important;
+}
+
+.loadingPop i {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotating /* Safari and Chrome */ {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+.loadingPop i[class="ion-ios-loop-strong"] {
+  -webkit-animation: rotating 2s linear infinite;
+          animation: rotating 2s linear infinite;
+}
+
+.state1 {
+  display: none !important;
+}
+
+.load .state0 {
+  display: none !important;
+}
+
+.load .state1 {
+  display: block !important;
+}
+
+.loadingPop span {
+  text-align: center;
+  width: 100%;
+  display: block;
+  line-height: 1.2rem;
+  font-size: 1.2rem;
+}
