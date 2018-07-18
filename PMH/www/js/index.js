@@ -563,7 +563,7 @@ function toggleTheme() {
 
 function updateBahn() {
     $('#bahn').html("<table><th>Abfahrt</th><th>Ziel</th>" + $("#bahnFrame").contents().find("tbody").html() + "</table>");
-    $("#bahnFrame").remove();
+    //$("#bahnFrame").remove();
 }
 
 function changeTheme() {
