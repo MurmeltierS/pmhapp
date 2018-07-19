@@ -43,7 +43,7 @@ function loadSMV() {
             mensa(newHTML);
         },
         function() {
-            alert("Verbindung zur Mensa-Seite fehlgeschlagen!");
+            Popup.open("Verbindung zur Mensa-Seite fehlgeschlagen!");
         }
     );
 

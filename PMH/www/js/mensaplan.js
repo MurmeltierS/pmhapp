@@ -20,7 +20,7 @@ class Mensaplan {
         [...parsedHTML.getElementsByTagName("p")].forEach(function(element) {
             if(element.innerText.includes("KW")) {
                 if(!element.innerText.includes("KW" + new Date().getWeekNumber())) {
-                    alert("Der Speiseplan wurde noch nicht für diese Woche aktualisiert!");
+                    Popup.open("Der Speiseplan wurde noch nicht für diese Woche aktualisiert!");
                 }
             } else {
                 var dayElements = element.innerText.split("\n\n");
