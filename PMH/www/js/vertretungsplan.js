@@ -15,18 +15,26 @@ class VertretungsplanMaster {
         if (!this.next) {
             new Vertretungsplan(this.week1, this.klasseVal).req().then(function(plan1) {
                 this.plan1 = plan1;
-                new Vertretungsplan(this.week1, this.unterGruppeVal).req().then(function(plan2) {
-                    this.plan2 = plan2;
-                    resolve(VertretungsplanMaster.merge(this.plan1, this.plan2));
-                }.bind(this));
+                if (this.unterGruppeVal != "0") {
+                    new Vertretungsplan(this.week1, this.unterGruppeVal).req().then(function(plan2) {
+                        this.plan2 = plan2;
+                        resolve(VertretungsplanMaster.merge(this.plan1, this.plan2));
+                    }.bind(this));
+                } else {
+                    resolve(this.plan1);
+                }
             }.bind(this));
         } else {
             new Vertretungsplan(this.week2, this.klasseVal).req().then(function(plan1) {
                 this.plan1 = plan1;
-                new Vertretungsplan(this.week2, this.unterGruppeVal).req().then(function(plan2) {
-                    this.plan2 = plan2;
-                    resolve(VertretungsplanMaster.merge(this.plan1, this.plan2));
-                }.bind(this));
+                if (this.unterGruppeVal != "0") {
+                    new Vertretungsplan(this.week2, this.unterGruppeVal).req().then(function(plan2) {
+                        this.plan2 = plan2;
+                        resolve(VertretungsplanMaster.merge(this.plan1, this.plan2));
+                    }.bind(this));
+                } else {
+                	resolve(this.plan1);
+                }
             }.bind(this));
         }
     }
@@ -34,11 +42,11 @@ class VertretungsplanMaster {
     static draw(pPlan) {
         var data = pPlan.data;
         for (var i = 0; i < data.length; i++) {
-        	document.querySelector("#day" + i + " table").innerHTML = "";
+            document.querySelector("#day" + i + " table").innerHTML = "";
             for (var j = 0; j < data[i].length; j++) {
 
                 if (data[i][j].length == 1) {
-                	document.querySelector("#day" + i + " table").innerHTML += "<tr><td>"+data[i][j][1]+"</tr></td>";
+                    document.querySelector("#day" + i + " table").innerHTML += "<tr><td>" + data[i][j][1] + "</tr></td>";
                 } else {
 
                     var moreInfo = "";

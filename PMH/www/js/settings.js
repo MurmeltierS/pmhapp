@@ -1,7 +1,7 @@
 class Settings{
 	constructor(){
-		this.klasse = "";
-		this.unterGruppe = "";
+		this.klasse;
+		this.unterGruppe;
 		this.theme = "light";
 	}
 
@@ -17,5 +17,6 @@ class Settings{
 		this.theme = pTheme;
 		Theme.changeTheme(this.theme);
 	}
+
 }
 

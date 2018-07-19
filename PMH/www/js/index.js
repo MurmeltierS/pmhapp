@@ -14,8 +14,11 @@ Date.prototype.getWeekNumber = function () {
 //document.getElementById('INvorName').value = vorName;
 //document.getElementById('INnachName').value = nachName;
 
-document.getElementById('selCl').value = (localStorage.getItem('Klasse') != null) ? localStorage.getItem('Klasse') : "";
-document.getElementById('selUn').value = (localStorage.getItem('UnKlasse') != null) ? localStorage.getItem('UnKlasse') : "";
+//document.getElementById('selCl').value = (localStorage.getItem('Klasse') != null) ? localStorage.getItem('Klasse') : "";
+//document.getElementById('selUn').value = (localStorage.getItem('UnKlasse') != null) ? localStorage.getItem('UnKlasse') : "";
+
+
+/*
 
 function loadSMV() {
     $.ajax({
@@ -37,19 +40,11 @@ function loadSMV() {
         });
 
 
-    var mensaplan = new Mensaplan();
-    mensaplan.fetchMensaPage(
-        function(newHTML) {
-            mensa(newHTML);
-        },
-        function() {
-            alert("Verbindung zur Mensa-Seite fehlgeschlagen!");
-        }
-    );
+    
 
 }
 
-
+*/
 
 
 'use strict';
@@ -420,7 +415,7 @@ function krankMail(pPerson, pMail) {
 }
 
 if (localStorage.getItem('first2') != null) {
-    reqPlan();
+    //reqPlan();
 }
 
 function smv(data) {
@@ -437,7 +432,7 @@ function saveInfo() {
     //localStorage.setItem("nachName", document.getElementById('INnachName').value);
     //vorName = localStorage.getItem("vorName");
     //nachName = localStorage.getItem("nachName");
-    loadSMV();
+    //loadSMV();
     currentIndex = 0;
     $swipeTabs.removeClass(activeTabClassName);
     $('.swipe-tab[data-slick-index=' + currentIndex + ']').addClass(activeTabClassName);
@@ -478,7 +473,7 @@ function setSave() {
     }, 500)
 }
 
-loadSMV();
+//loadSMV();
 
 if (localStorage.getItem('first2') == null) {
     currentIndex = 5;
@@ -536,7 +531,7 @@ function ermittleUnKlassen() {
     }
 }
 
-ermittleUnKlassen();
+//ermittleUnKlassen();
 
 $(".spsh").addClass("dnone");
 
@@ -578,7 +573,7 @@ $('#bahnFrame').load(function () {
 
 
 
-changeTheme();
+//changeTheme();
 
 function openPop(data) {
 
