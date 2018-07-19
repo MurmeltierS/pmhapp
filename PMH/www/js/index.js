@@ -35,22 +35,18 @@ function loadSMV() {
                     alert("SMV-Tab konnte nicht geladen werden");
                 });
         });
-    $.ajax({
-            url: "http://78.94.231.65:8524/mensa.html?ver=" + versionID,
-        })
-        .done(function (data) {
-            mensa(data);
-        }).fail(function () {
-            $.ajax({
-                    url: "http://10.128.0.2:8524/mensa.html?ver=" + versionID,
-                })
-                .done(function (data) {
-                    mensa(data);
-                })
-                .fail(function () {
-                    alert("Mensa-Tab konnte nicht über http://10.128.0.2:8524/mensa.html geladen werden");
-                });
-        });
+
+
+    var mensaplan = new Mensaplan();
+    mensaplan.fetchMensaPage(
+        function(newHTML) {
+            mensa(newHTML);
+        },
+        function() {
+            alert("Verbindung zur Mensa-Seite fehlgeschlagen!");
+        }
+    );
+
 }
 
 
