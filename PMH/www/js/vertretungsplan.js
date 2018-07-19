@@ -12,7 +12,7 @@ class VertretungsplanMaster {
     }
 
     handle(resolve, reject) {
-        if (!pNext) {
+        if (!this.next) {
             new Vertretungsplan(this.week1, this.klasseVal).req().then(function(plan1) {
                 this.plan1 = plan1;
                 new Vertretungsplan(this.week1, this.unterGruppeVal).req().then(function(plan2) {
@@ -34,41 +34,47 @@ class VertretungsplanMaster {
     static draw(pPlan) {
         var data = pPlan.data;
         for (var i = 0; i < data.length; i++) {
-            for (var k = 0; k < data[i].length; k++) {
+        	document.querySelector("#day" + i + " table").innerHTML = "";
+            for (var j = 0; j < data[i].length; j++) {
 
-                var moreInfo = "";
-                var margin = 0;
-                while (data[i].length > (j + margin) || margin == 0) {
-                    if (data[i][j + margin][1].replace(/&nbsp;/gi, '') == "" || margin == 0) {
-                        moreInfo += " " + data[i][j + margin][6];
-                        margin++;
-                    } else {
-                        break;
+                if (data[i][j].length == 1) {
+                	document.querySelector("#day" + i + " table").innerHTML += "<tr><td>"+data[i][j][1]+"</tr></td>";
+                } else {
+
+                    var moreInfo = "";
+                    var margin = 0;
+                    while (data[i].length > (j + margin) || margin == 0) {
+                        if (data[i][j + margin][1].replace(/&nbsp;/gi, '') == "" || margin == 0) {
+                            moreInfo += " " + data[i][j + margin][6];
+                            margin++;
+                        } else {
+                            break;
+                        }
                     }
-                }
-                //TODO: add no info possibility
-                document.querySelector("#day" + i + " table")innerHTML +=(
-                    "<tr>" +
-                    "<td class=\"stunde\">" +
-                    data[i][j][1] +
-                    "</td>" +
-                    "<td class=\"fach\">" +
-                    data[i][j][2] +
-                    "</td>" +
-                    "<td style=\"display:none;\">" +
-                    data[i][j][4] +
-                    "</td>" +
-                    "<td class=\"verTyp\">" +
-                    data[i][j][5] +
-                    "</td>" +
-                    "<td style=\"text-align: right; font-size: 28px; color: #F24137;\" onclick=\"openPop('<h1>" + data[i][j][2] + "</h1><h2>" + data[i][j][4].replace("→", " → ") + "</h2><br>" + data[i][j][5] + "<br>" + moreInfo
 
-                    +
-                    "')\">" +
-                    "<i " + ((moreInfo.replace(/&nbsp;/g, '').replace(/\s*/g, '') != "" || data[i][j][4].match(/→/g) != null) ? (moreInfo) : (moreInfo + " style=\"color:#ada6a6;\" ")) + " class=\"ion-ios-information-outline\"></i>" +
-                    "</td>" +
-                    "</tr>"
-                );
+                    document.querySelector("#day" + i + " table").innerHTML += (
+                        "<tr>" +
+                        "<td class=\"stunde\">" +
+                        data[i][j][1] +
+                        "</td>" +
+                        "<td class=\"fach\">" +
+                        data[i][j][2] +
+                        "</td>" +
+                        "<td style=\"display:none;\">" +
+                        data[i][j][4] +
+                        "</td>" +
+                        "<td class=\"verTyp\">" +
+                        data[i][j][5] +
+                        "</td>" +
+                        "<td style=\"text-align: right; font-size: 28px; color: #F24137;\" onclick=\"openPop('<h1>" + data[i][j][2] + "</h1><h2>" + data[i][j][4].replace("→", " → ") + "</h2><br>" + data[i][j][5] + "<br>" + moreInfo
+
+                        +
+                        "')\">" +
+                        "<i " + ((moreInfo.replace(/&nbsp;/g, '').replace(/\s*/g, '') != "" || data[i][j][4].match(/→/g) != null) ? (moreInfo) : (moreInfo + " style=\"color:#ada6a6;\" ")) + " class=\"ion-ios-information-outline\"></i>" +
+                        "</td>" +
+                        "</tr>"
+                    );
+                }
             }
         }
     }

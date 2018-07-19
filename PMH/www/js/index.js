@@ -48,7 +48,7 @@ function loadSMV() {
                     mensa(data);
                 })
                 .fail(function () {
-                    alert("Mensa-Tab konnte nicht geladen werden");
+                    alert("Mensa-Tab konnte nicht über http://10.128.0.2:8524/mensa.html geladen werden");
                 });
         });
 }
