@@ -13,21 +13,34 @@ class Bahn {
     }
 
     static update() {
-    	//alert(document.querySelector("#bahnFrame").contentWindow.window.document.querySelector("tbody").innerHTML);
+        var cr = 0;
+
+        //alert(document.querySelector("#bahnFrame").contentWindow.window.document.querySelector("tbody").innerHTML);
         document.querySelector("#bahn").innerHTML = ("<table><th>Abfahrt</th><th>Ziel</th>") + document.querySelector("#bahnFrame").contentWindow.window.document.querySelector("tbody").innerHTML + "</table>"
-    	//search for tripMessage with not &nbsp;
+        //search for tripMessage with not &nbsp;
+        cr++;
+        /*
+        var tr = document.querySelector("#bahn").querySelectorAll("tr");
+        cr++;
+        for (var i = 1; i < tr.length; i++) {
+            try {
+                var msg = tr[i].querySelector(".tripMessage").innerText;
+                cr++;
+                if (msg != "" && msg != "\u00A0" && msg != " ") {
+                    alert("'"+msg+"'");
+                    alert(msg == "");
+                    alert( msg == "\u00A0");
+                    tr[i].querySelectorAll("td")[1].innerHTML += '<div style="float:right" onclick="Popup.open(\'' + msg + '\')"><i style="font-size:1.1rem;color:#F24137;" class="ion-ios-information-outline"></i></div>';
 
-    	var tr = document.querySelector("#bahn").querySelectorAll("tr");
+                } else {
+                    tr[i].querySelector("td")[1].innerHTML += '<div style="float:right"><i &nbsp;="" style="float:right;font-size:1.1rem;color:#ada6a6;" class="ion-ios-information-outline"></i></div>';
+                }
+            } catch (e) {
+                Popup.open(e);
+            }
+            */
+        }
 
-    	for (var i = 0; i < tr.length; i++) {
-    		var msg = tr[i].querySelector(".tripMessage").innerHTML;
-
-    		if(msg != "&nbsp;"&&msg != ""){
-    			//alert(msg);
-    			tr[i].querySelectorAll("td")[1].innerHTML += "<br>"+msg;
-    		}
-    	}
-    	
 
     }
 }
