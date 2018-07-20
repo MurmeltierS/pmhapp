@@ -541,7 +541,7 @@ function ermittleUnKlassen() {
 
 //ermittleUnKlassen();
 
-$(".spsh").addClass("dnone");
+
 
 
 /*
@@ -620,11 +620,14 @@ if (main.settings.klasse != "") {
 }
 
 /*
-setInterval(function(){
-    try{
-    alert(document.querySelector("#bahnFrame").contentWindow.window);
-}catch(e){
-    Popup.open(e);
-}
-}, 2000);
-*/
+setInterval(function() {
+    try {
+        alert($("#bahnFrame").contents());
+        alert($("#bahnFrame").contents().find("body"));
+        alert($("#bahnFrame").contents().find("body").html());
+        alert($("#bahnFrame").contents().find("tbody").html());
+        alert(document.querySelector("#bahnFrame").contentWindow.window.document.querySelector("tbody").innerHTML);
+    } catch (e) {
+        Popup.open(e);
+    }
+}, 5000);*/

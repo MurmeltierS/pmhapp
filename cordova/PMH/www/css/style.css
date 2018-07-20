@@ -438,6 +438,15 @@ select {
     color: #F24137;
 }
 
+#bahnFrame {
+    opacity: 0;
+    width: 1000vw;
+    height: 100vw;
+    position: absolute;
+    top: -200vw;
+    left: -20000vw;
+}
+
 #bahn th {
     font-weight: bold;
     text-align: left;
