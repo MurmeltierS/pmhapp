@@ -6,25 +6,32 @@ class KlassenMaster {
     static loadKlassenIntoSelect(pKlassenListe) {
         var select = document.querySelector("#selCl");
         select.innerHTML = '<option value="0" disabled="" selected="">Klasse</option>';
+        select.onchange = main.changeKlasse.bind(main);
         for (var i = 0; i < pKlassenListe.klassen.length; i++) {
             select.innerHTML += '<option value="' + pKlassenListe.klassen[i].val + '">' + pKlassenListe.klassen[i].name + '</option>';
         }
+        
+        
+
     }
 
-    static loadCurrentUntergruppen(pKlassenListe) {
+    static loadCurrentUnterGruppen(pKlassenListe) {
     	var unterSelect = document.querySelector("#selUn");
     	unterSelect.innerHTML = '<option value="0" disabled="" selected="">Untergruppe</option>';
+    	unterSelect.onchange = main.changeUnterGruppe.bind(main);
         var i = 0;
-        var klasseVal = document.querySelector("#selCl option[selected]").value;
+        var klasseVal = document.querySelector("#selCl").value;
         console.log(klasseVal);
-        while (i < pKlassenListe.klassen.length && klasseVal != pKlassenListe.klassen[i].value) {
+        while (i < pKlassenListe.klassen.length && klasseVal != pKlassenListe.klassen[i].val) {
             i++;
         }
-        if (klasseVal == pKlassenListe.klassen[i].value) {
+        if (klasseVal == pKlassenListe.klassen[i].val) {
             for (var k = 0; k < pKlassenListe.klassen[i].unterGruppen.length; k++) {
-                unterSelect.innerHTML += '<option value="' + pKlassenListe.klassen[i].unterGruppen[k].val + '">' +  pKlassenListe.klassen[i].unterGruppen[k].name + '</option>';
+                unterSelect.innerHTML += '<option value="' + pKlassenListe.klassen[i].unterGruppen[k].val + '">' +  pKlassenListe.klassen[i].unterGruppen[k].name.replace(pKlassenListe.klassen[i].name,"") + '</option>';
             }
         }
+
+        
     }
 
 

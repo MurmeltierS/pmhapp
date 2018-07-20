@@ -1,21 +1,20 @@
 versionID = 8;
 
-Date.prototype.getWeekNumber = function () {
+Date.prototype.getWeekNumber = function() {
     var d = new Date(+this);
     d.setHours(0, 0, 0, 0);
     d.setDate(d.getDate() + 4 - (d.getDay() || 7));
     return Math.ceil((((d - new Date(d.getFullYear(), 0, 1)) / 8.64e7) + 1) / 7);
 };
 
+HTMLSelectElement.prototype.getSelectedText = function() {
+    var elt = this;
 
-//var vorName = (localStorage.getItem('vorName') != null) ? localStorage.getItem('vorName') : "";
-//var nachName = (localStorage.getItem('nachName') != null) ? localStorage.getItem('nachName') : "";
+    if (elt.selectedIndex == -1)
+        return null;
 
-//document.getElementById('INvorName').value = vorName;
-//document.getElementById('INnachName').value = nachName;
-
-//document.getElementById('selCl').value = (localStorage.getItem('Klasse') != null) ? localStorage.getItem('Klasse') : "";
-//document.getElementById('selUn').value = (localStorage.getItem('UnKlasse') != null) ? localStorage.getItem('UnKlasse') : "";
+    return elt.options[elt.selectedIndex].text;
+}
 
 
 /*
@@ -55,7 +54,7 @@ var $swipeTabsContainer = $('.swipe-tabs'),
     currentIndex = 0,
     activeTabClassName = 'active-tab';
 
-$swipeTabsContainer.on('init', function (event, slick) {
+$swipeTabsContainer.on('init', function(event, slick) {
     $swipeTabsContentContainer.removeClass('invisible');
     $swipeTabsContainer.removeClass('invisible');
 
@@ -86,7 +85,7 @@ $swipeTabsContentContainer.slick({
 });
 
 
-$swipeTabs.on('click', function (event) {
+$swipeTabs.on('click', function(event) {
     // gets index of clicked tab
     currentIndex = $(this).data('slick-index');
     $swipeTabs.removeClass(activeTabClassName);
@@ -96,7 +95,7 @@ $swipeTabs.on('click', function (event) {
 });
 
 //initializes slick navigation tabs swipe handler
-$swipeTabsContentContainer.on('swipe', function (event, slick, direction) {
+$swipeTabsContentContainer.on('swipe', function(event, slick, direction) {
     currentIndex = $(this).slick('slickCurrentSlide');
     $swipeTabs.removeClass(activeTabClassName);
     $('.swipe-tab[data-slick-index=' + currentIndex + ']').addClass(activeTabClassName);
@@ -142,7 +141,8 @@ function drawPlan(data, pDel, pNext) {
                             "</td>" +
                             "<td style=\"text-align: right; font-size: 28px; color: #F24137;\" onclick=\"openPop('<h1>" + data[i][j][2] + "</h1><h2>" + data[i][j][4].replace("→", " → ") + "</h2><br>" + data[i][j][5] + "<br>" + moreInfo
 
-                            + "')\">" +
+                            +
+                            "')\">" +
                             "<i " + ((moreInfo.replace(/&nbsp;/g, '').replace(/\s*/g, '') != "" || data[i][j][4].match(/→/g) != null) ? (moreInfo) : (moreInfo + " style=\"color:#ada6a6;\" ")) + " class=\"ion-ios-information-outline\"></i>" +
                             "</td>" +
                             "</tr>"
@@ -197,7 +197,8 @@ function drawPlan(data, pDel, pNext) {
                             "</td>" +
                             "<td style=\"text-align: right; font-size: 28px; color: #F24137;\" onclick=\"openPop('<h1>" + data[i][j][2] + "</h1><h2>" + data[i][j][4].replace("→", " → ") + "</h2><br>" + data[i][j][5] + "<br>" + moreInfo
 
-                            + "')\">" +
+                            +
+                            "')\">" +
                             "<i " + ((moreInfo.replace(/&nbsp;/g, '').replace(/\s*/g, '') != "" || data[i][j][4].match(/→/g) != null) ? (moreInfo) : (moreInfo + " style=\"color:#ada6a6;\" ")) + " class=\"ion-ios-information-outline\"></i>" +
                             "</td>" +
                             "</tr>"
@@ -360,34 +361,34 @@ function reqPlan() {
 
     //console.log();
     $.ajax({
-         url: "http://intern.gsz-zak.de/Vertretungsplan/w/" + (((new Date().getDay() == 0) ? (new Date().getWeekNumber() + 1) : (new Date().getWeekNumber()).toString().length == 1) ? "0" : "") + ((new Date().getDay() == 0) ? (new Date().getWeekNumber() + 1) : (new Date().getWeekNumber())) + "/w" + convertClId($('#selCl').find(":selected").val()) + ".htm",
-     })
-     .done(function(data) {
+            url: "http://intern.gsz-zak.de/Vertretungsplan/w/" + (((new Date().getDay() == 0) ? (new Date().getWeekNumber() + 1) : (new Date().getWeekNumber()).toString().length == 1) ? "0" : "") + ((new Date().getDay() == 0) ? (new Date().getWeekNumber() + 1) : (new Date().getWeekNumber())) + "/w" + convertClId($('#selCl').find(":selected").val()) + ".htm",
+        })
+        .done(function(data) {
 
-         loadPlan(data, true);
-         if ($('#selUn option:selected').val() != "x") {
-             //console.log("Untergruppe erkannt!");
-             $.ajax({
-                     url: "http://intern.gsz-zak.de/Vertretungsplan/w/" + (((new Date().getDay() == 0) ? (new Date().getWeekNumber() + 1) : (new Date().getWeekNumber()).toString().length == 1) ? "0" : "") + ((new Date().getDay() == 0) ? (new Date().getWeekNumber() + 1) : (new Date().getWeekNumber())) + "/w" + convertClId($('#selUn').find(":selected").val()) + ".htm",
-                 })
-                 .done(function(data) {
-                     loadPlan(data, false);
-                     setLoad(false);
+            loadPlan(data, true);
+            if ($('#selUn option:selected').val() != "x") {
+                //console.log("Untergruppe erkannt!");
+                $.ajax({
+                        url: "http://intern.gsz-zak.de/Vertretungsplan/w/" + (((new Date().getDay() == 0) ? (new Date().getWeekNumber() + 1) : (new Date().getWeekNumber()).toString().length == 1) ? "0" : "") + ((new Date().getDay() == 0) ? (new Date().getWeekNumber() + 1) : (new Date().getWeekNumber())) + "/w" + convertClId($('#selUn').find(":selected").val()) + ".htm",
+                    })
+                    .done(function(data) {
+                        loadPlan(data, false);
+                        setLoad(false);
 
-                 });
-         } else {
-             setLoad(false);
-         }
+                    });
+            } else {
+                setLoad(false);
+            }
 
 
 
-     });
+        });
 
     //next week
     $.ajax({
             url: "http://intern.gsz-zak.de/Vertretungsplan/w/" + (((next.getDay() == 0) ? (next.getWeekNumber() + 1) : (next.getWeekNumber()).toString().length == 1) ? "0" : "") + ((next.getDay() == 0) ? (next.getWeekNumber() + 1) : (next.getWeekNumber())) + "/w" + convertClId($('#selCl').find(":selected").val()) + ".htm",
         })
-        .done(function (data) {
+        .done(function(data) {
 
             loadPlan(data, true, true);
             if ($('#selUn option:selected').val() != "x") {
@@ -395,7 +396,7 @@ function reqPlan() {
                 $.ajax({
                         url: "http://intern.gsz-zak.de/Vertretungsplan/w/" + (((next.getDay() == 0) ? (next.getWeekNumber() + 1) : (next.getWeekNumber()).toString().length == 1) ? "0" : "") + ((next.getDay() == 0) ? (next.getWeekNumber() + 1) : (next.getWeekNumber())) + "/w" + convertClId($('#selUn').find(":selected").val()) + ".htm",
                     })
-                    .done(function (data) {
+                    .done(function(data) {
                         loadPlan(data, false, true);
                         setLoad(false);
 
@@ -454,7 +455,7 @@ function sendM() {
         data: new FormData($('#mae')[0]),
         processData: false,
         contentType: false,
-        success: function (data) {
+        success: function(data) {
 
             setLoad(false);
         }
@@ -463,12 +464,12 @@ function sendM() {
 
 
 function setLoad(p) {
-    var nope = (p) ? $(".loadingPop").addClass("load") : $(".loadingPop").removeClass("load");
+    // var nope = (p) ? $(".loadingPop").addClass("load") : $(".loadingPop").removeClass("load");
 }
 
 function setSave() {
     $(".loadingPop").addClass("save");
-    setTimeout(function () {
+    setTimeout(function() {
         $(".loadingPop").removeClass("save");
     }, 500)
 }
@@ -565,8 +566,8 @@ function changeTheme() {
 }
 
 
-$('#bahnFrame').load(function () {
-    setTimeout(function () {
+$('#bahnFrame').load(function() {
+    setTimeout(function() {
         updateBahn();
     }, 5000);
 });
@@ -579,7 +580,7 @@ function openPop(data) {
 
     $(".popup").html('<i onclick="closePop();" class="ion-ios-close-empty"></i>' + data);
     $(".popup").removeClass("dnone");
-    setTimeout(function () {
+    setTimeout(function() {
         $(".popup").addClass("open");
     }, 10);
 
@@ -589,11 +590,16 @@ function openPop(data) {
 function closePop(data) {
 
     $(".popup").addClass("down");
-    setTimeout(function () {
+    setTimeout(function() {
         $(".popup").addClass("dnone");
         $(".popup").removeClass("down");
         $(".popup").removeClass("open");
     }, 200);
 
 
+}
+
+main = new Main();
+if (main.settings.klasse != "") {
+    main.requestVertretungsplan();
 }

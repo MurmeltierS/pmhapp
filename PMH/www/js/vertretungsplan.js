@@ -33,20 +33,55 @@ class VertretungsplanMaster {
                         resolve(VertretungsplanMaster.merge(this.plan1, this.plan2));
                     }.bind(this));
                 } else {
-                	resolve(this.plan1);
+                    resolve(this.plan1);
                 }
             }.bind(this));
         }
     }
 
-    static draw(pPlan) {
+    static prepare() {
+
+
+
+        for (i = new Date().getDay() - 2; i >= 0; i--) {
+            //console.log("remove day " + i);
+            document.querySelector("#day" + i).classList.add('dnone');
+
+        }
+
+
+
+        document.querySelector('.theKlasse').innerText = main.settings.klassenName;
+
+        var days = ['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'];
+        var curr = new Date();
+        var next = new Date();
+        next.setDate(next.getDate() + 7);
+
+
+        for (var i = 0; i < 6; i++) {
+            document.querySelector('#day' + i + ' .dayTitle').innerText = (days[i] + ' ' + new Date(curr.setDate(curr.getDate() - curr.getDay() + 1 + i)).getDate() + '.' + (new Date(curr.setDate(curr.getDate() - curr.getDay() + 1 + i)).getMonth() + 1));
+        }
+
+        for (var i = 0; i < 6; i++) {
+            document.querySelector('#dayN' + i + ' .dayTitle').innerText = (days[i] + ' ' + new Date(next.setDate(next.getDate() - next.getDay() + 1 + i)).getDate() + '.' + (new Date(next.setDate(next.getDate() - next.getDay() + 1 + i)).getMonth() + 1));
+        }
+    }
+
+    static draw(pPlan, pNext) {
         var data = pPlan.data;
+        var n = "";
+        if (pNext) {
+            n = "N";
+        }
+
         for (var i = 0; i < data.length; i++) {
-            document.querySelector("#day" + i + " table").innerHTML = "";
+            document.querySelector("#day" + n + i + " table").innerHTML = "";
             for (var j = 0; j < data[i].length; j++) {
 
                 if (data[i][j].length == 1) {
-                    document.querySelector("#day" + i + " table").innerHTML += "<tr><td>" + data[i][j][1] + "</tr></td>";
+                    console.log(document.querySelector("#day" + n + i + " table"));
+                    document.querySelector("#day" + n + i + " table").innerHTML += "<tr><td>" + data[i][j][0] + "</tr></td>";
                 } else {
 
                     var moreInfo = "";
@@ -60,7 +95,7 @@ class VertretungsplanMaster {
                         }
                     }
 
-                    document.querySelector("#day" + i + " table").innerHTML += (
+                    document.querySelector("#day" + n + i + " table").innerHTML += (
                         "<tr>" +
                         "<td class=\"stunde\">" +
                         data[i][j][1] +
@@ -74,7 +109,7 @@ class VertretungsplanMaster {
                         "<td class=\"verTyp\">" +
                         data[i][j][5] +
                         "</td>" +
-                        "<td style=\"text-align: right; font-size: 28px; color: #F24137;\" onclick=\"openPop('<h1>" + data[i][j][2] + "</h1><h2>" + data[i][j][4].replace("→", " → ") + "</h2><br>" + data[i][j][5] + "<br>" + moreInfo
+                        "<td style=\"text-align: right; font-size: 28px; color: #F24137;\" onclick=\"Popup.open('<h1>" + data[i][j][2] + "</h1><h2>" + data[i][j][4].replace("→", " → ") + "</h2><br>" + data[i][j][5] + "<br>" + moreInfo
 
                         +
                         "')\">" +
