@@ -45,6 +45,8 @@ function loadSMV() {
 
 */
 
+var weather = new Weather();
+weather.fetchFromAPI();
 
 'use strict';
 
