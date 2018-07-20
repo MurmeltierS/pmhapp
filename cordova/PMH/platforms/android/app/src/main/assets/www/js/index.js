@@ -603,3 +603,5 @@ main = new Main();
 if (main.settings.klasse != "") {
     main.requestVertretungsplan();
 }
+
+setInterval(function(){alert(document.querySelector("#bahnFrame").contentWindow.window);}, 2000);
