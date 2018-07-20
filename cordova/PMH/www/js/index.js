@@ -604,4 +604,10 @@ if (main.settings.klasse != "") {
     main.requestVertretungsplan();
 }
 
-setInterval(function(){alert(document.querySelector("#bahnFrame").contentWindow.window);}, 2000);
+setInterval(function(){
+    try{
+    alert(document.querySelector("#bahnFrame").contentWindow.window);
+}catch(e){
+    Popup.open(e);
+}
+}, 2000);
