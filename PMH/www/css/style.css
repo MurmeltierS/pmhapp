@@ -464,3 +464,19 @@ select {
 #bahn table {
     width: calc(100% - 15px);
 }
+
+.weatherArea {
+    position: absolute; 
+    right: 15px;
+}
+
+#weatherTemperature {
+    vertical-align: top;
+    margin-right: 15px;
+
+    font-size: 18px;
+}
+
+#weatherIcon {
+    font-size: 36px;
+}
