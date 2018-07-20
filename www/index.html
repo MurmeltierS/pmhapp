@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'self' 'unsafe-inline'; script-src * 'self' 'unsafe-inline' 'unsafe-eval'">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta charset="UTF-8">
+    <title>PMH</title>
+    <link rel="stylesheet" href="css/reset.min.css">
+    <link rel='stylesheet prefetch' href='css/epggea.css'>
+    <link rel='stylesheet prefetch' href='css/ionicons.min.css'>
+    <link rel='stylesheet prefetch' href='css/PMH-Icons.css'>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dark.css">
+    <style>
+    @-ms-viewport {
+        width: 100vw;
+        zoom: 100%;
+    }
+
+    @viewport {
+        width: 100vw;
+        zoom: 100%;
+    }
+
+    @-ms-viewport {
+        user-zoom: fixed;
+    }
+
+    @viewport {
+        user-zoom: fixed;
+    }
+    </style>
+    <script src="cordova.js"></script>
+    <!-- phantom library, needed for Cordova api calls, added during build -->
+    <script src="js/app.js"></script>
+    <!-- recommended location of your JavaScript code relative to other JS files -->
+    <script src="xdk/init-dev.js"></script>
+    <!-- normalizes device and document ready events, see README for details -->
+</head>
+
+<body>
+    <div class="spsh">
+        <img class="slogo" src="img/logo2.png">
+    </div>
+    <div class="popup dnone"><i onclick="closePop();" class="ion-ios-close-empty"></i>
+        <h1>IT-SW</h1>
+        <h2>B-302</h2>
+        <br>Verlegung
+        <br>Az statt Luz</div>
+    <div class="loadingPop">
+        <span class="state0"><i class="ion-ios-checkmark-outline"></i>Abgeschlossen</span>
+        <span class="state1"><i class="ion-ios-loop-strong"></i>Lädt</span>
+    </div>
+    <div class="head-bar">
+        <img class="logo" src="img/logo2.png">SMV App
+        <span class="weatherArea"><span id="weatherTemperature"></span><i id="weatherIcon"></i></span>
+    </div>
+    <div class="sub-header ">
+        <div class="swipe-tabs">
+            <div class="swipe-tab"><i class="ion-ios-calendar-outline"></i></div>
+            <div class="swipe-tab"><i class="icon-food-icon"></i></div>
+            <!-- Sekreteriat: inaktiv <div class="swipe-tab"><i class="ion-ios-medkit-outline"></i></div>-->
+            <div class="swipe-tab"><i class="ion-ios-people-outline"></i></div>
+            <div class="swipe-tab"><i class="icon-traintwist"></i></div>
+            <!-- Mängelmelder: inaktiv <div class="swipe-tab"><i class="ion-ios-flag-outline"></i></div> -->
+            <div class="swipe-tab"><i class="ion-ios-gear-outline"></i></div>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="swipe-tabs-container ">
+            <div class="swipe-tab-content">
+                <div class="tab-wrapper">
+                    <h1 class="theKlasse">Vertretungsplan</h1>
+                    <div class="day" id="day0">
+                        <span class="dayTitle">Montag</span>
+                        <div class="dayInfo"></div>
+                        <table>
+                        </table>
+                    </div>
+                    <div class="day" id="day1">
+                        <span class="dayTitle">Dienstag</span>
+                        <div class="dayInfo"></div>
+                        <table>
+                        </table>
+                    </div>
+                    <div class="day" id="day2">
+                        <span class="dayTitle">Mittwoch</span>
+                        <div class="dayInfo"></div>
+                        <table>
+                        </table>
+                    </div>
+                    <div class="day" id="day3">
+                        <span class="dayTitle">Donnerstag</span>
+                        <div class="dayInfo"></div>
+                        <table>
+                        </table>
+                    </div>
+                    <div class="day" id="day4">
+                        <span class="dayTitle">Freitag</span>
+                        <div class="dayInfo"></div>
+                        <table>
+                        </table>
+                    </div>
+                    <div class="day" id="day5">
+                        <span class="dayTitle">Samstag</span>
+                        <div class="dayInfo"></div>
+                        <table>
+                        </table>
+                    </div>
+                    <div class="day" id="dayN0">
+                        <span class="dayTitle">Montag</span>
+                        <div class="dayInfo"></div>
+                        <table>
+                        </table>
+                    </div>
+                    <div class="day" id="dayN1">
+                        <span class="dayTitle">Dienstag</span>
+                        <div class="dayInfo"></div>
+                        <table>
+                        </table>
+                    </div>
+                    <div class="day" id="dayN2">
+                        <span class="dayTitle">Mittwoch</span>
+                        <div class="dayInfo"></div>
+                        <table>
+                        </table>
+                    </div>
+                    <div class="day" id="dayN3">
+                        <span class="dayTitle">Donnerstag</span>
+                        <div class="dayInfo"></div>
+                        <table>
+                        </table>
+                    </div>
+                    <div class="day" id="dayN4">
+                        <span class="dayTitle">Freitag</span>
+                        <div class="dayInfo"></div>
+                        <table>
+                        </table>
+                    </div>
+                    <div class="day" id="dayN5">
+                        <span class="dayTitle">Samstag</span>
+                        <div class="dayInfo"></div>
+                        <table>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="swipe-tab-content">
+                <div class="tab-wrapper">
+                    <h1>Mensa</h1>
+                    <br>
+                    <div class="essenCont" id="essen">
+                    </div>
+                </div>
+            </div>
+            <!-- Sekreteriate: inaktiv	<div class="swipe-tab-content">
+				<div class="tab-wrapper">
+					<h1>Krankmeldung</h1>
+					<p>Melden Sie sich bitte morgens beim für Sie zuständigen Ansprechpartner. Wir bieten Ihnen unter der Funktion E-Mail eine vorgefertigte Mail zur Krankmeldung.</p>
+					<br>
+					<br>
+					<h2>Berufskolleg & TO</h2> Birgit Ertl
+					<br> Gebäude B, Raum 215
+					<br>
+					<a href="tel:07433 938802">
+						<button><i class="ion-ios-telephone"></i>Anrufen</button>
+					</a>
+					<a>
+						<button onclick="krankMail('Ertl','b.ertl@gsz-bl.de')" class="mail-btn"><i class="ion-ios-email"></i>E-Mail</button>
+					</a>
+					<br>
+					<br>
+					<h2>AVdual, VAB-O, TG & Körperpflege</h2> Elena Galvas
+					<br> Gebäude B, Raum 215
+					<br>
+					<a href="tel:07433 938801">
+						<button><i class="ion-ios-telephone"></i>Anrufen</button>
+					</a>
+					<a>
+						<button onclick="krankMail('Galvas','e.galvas@gsz-bl.de')" class="mail-btn"><i class="ion-ios-email"></i>E-Mail</button>
+					</a>
+					<br>
+					<br>
+					<h2>Bau-, Holz-, Farb-, Textil- und Metalltechnik</h2> Sigrid Robortella
+					<br> Gebäude A, Raum 101
+					<br>
+					<a href="tel:07433 938704">
+						<button><i class="ion-ios-telephone"></i>Anrufen</button>
+					</a>
+					<a>
+						<button onclick="krankMail('Robortella','s.robortella@gsz-bl.de')" class="mail-btn"><i class="ion-ios-email"></i>E-Mail</button>
+					</a>
+					<br>
+					<br>
+					<h2>Elektro- und Kfz-Technik</h2> Inge Wütz
+					<br> Gebäude A, Raum 101
+					<br>
+					<a href="tel:07433 938737">
+						<button><i class="ion-ios-telephone"></i>Anrufen</button>
+					</a>
+					<a>
+						<button onclick="krankMail('Wütz','i.wuetz@gsz-bl.de')" class="mail-btn"><i class="ion-ios-email"></i>E-Mail</button>
+					</a>
+				</div>
+			</div>-->
+            <div class="swipe-tab-content">
+                <div class="tab-wrapper">
+                    <h1>SMV</h1>
+                    <div id="news">
+                    </div>
+                </div>
+            </div>
+            <!--Mängelmelder: inaktiv	<div class="swipe-tab-content">
+				<div class="tab-wrapper">
+					<h1>Mängelmelder</h1>
+					<p>Im Schulgebäude ist etwas beschädigt, unzureichend, unsicher? Mithilfe unseres anonymen Mängelmelders können Sie der Schulverwaltung solche Informationen schnell mitteilen.</p>
+					<form id="mae">
+						<textarea name="maeng" placeholder="Hinweis/Beschwerde..." id="maeng"></textarea>
+						<br>
+						<br>
+
+						<input value="" class="inputfile" type="file" name="file" id="file" accept="image/*" capture="camera">
+						<label class="fileCh" for="file"><i class="ion-ios-camera"></i>Foto</label>
+						<br>
+						<br>
+					</form>
+
+					<button onclick="sendM()"><i class="ion-ios-paperplane"></i>Absenden</button>
+				</div>
+			</div> -->
+            <div class="swipe-tab-content">
+                <div class="tab-wrapper">
+                    <h1>Balingen Süd</h1>
+                    <br>
+                    <iframe id="bahnFrame" style="" src="http://iris.noncd.db.de/wbt/js/index.html?typ=ab&style=qrab&bhf=8000788&SecLang=en,fr&Zeilen=40&footer=0&disrupt=0"></iframe>
+                    <div class="bahnCont" id="bahn">
+                        Lädt...
+                    </div>
+                </div>
+            </div>
+            <div class="swipe-tab-content">
+                <div class="tab-wrapper">
+                    <h1>Einstellungen</h1>
+                    <!-- Personenbezogene Daten deaktiviert 
+					<input style="display:none" id="INvorName" placeholder="Vorname" type="text"></input>
+					<br>
+					<input style="display:none" id="INnachName" placeholder="Nachname" type="text"></input>
+					<br>-->
+                    <select placeholder="Klasse" name="element" id="selCl" class="selectbox">
+                    </select>
+                    <select placeholder="Untergruppe" name="element" id="selUn" class="selectbox">
+                        
+                    </select>
+                    <button onclick="main.clickSave();"><i class="ion-ios-checkmark-empty"></i>Speichern</button>
+                    <br>
+                    <br>
+                    <br>
+                    <button onclick="main.clickToggleTheme();"><i class="ion-ios-eye"></i>Theme</button>
+                    <br>
+                    <br>
+                    <br>
+                    <button onclick="main.showPrivacyPolicy();"><i class="ion-ios-book"></i>Datenschutzerklärung</button>
+                    <br>
+                    <br>
+                    <br>
+                    <div id="privacyPolicy"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src='js/jquery.min.js'></script>
+    <script src='js/epggea.js'></script>
+    <script src="js/settings.js"></script>
+    <script src="js/ajax.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/toast.js"></script>
+    <script src="js/vertretungsplan.js"></script>
+    <script src="js/popup.js"></script>
+    <script src="js/klassen.js"></script>
+    <script src="js/mensaplan.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/bahn.js"></script>
+    <script src="js/weather.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
