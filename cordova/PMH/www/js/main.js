@@ -13,7 +13,8 @@ class Main {
                 document.querySelector("#selUn").value = main.settings.unterGruppe;
             }
         }.bind(this));
-        
+        Bahn.init();
+        document.querySelector(".spsh").classList.add("dnone");
     }
 
     requestVertretungsplan() {
@@ -30,7 +31,7 @@ class Main {
                 }.bind(this));
             } else {
                 new VertretungsplanMaster(this.settings.klasse, 0, false).then(function(pPlan) {
-                	VertretungsplanMaster.draw(pPlan, false);
+                    VertretungsplanMaster.draw(pPlan, false);
                     new VertretungsplanMaster(this.settings.klasse, 0, true).then(function(pPlanN) {
                         VertretungsplanMaster.draw(pPlanN, true);
                         Toast.finish();
@@ -54,6 +55,16 @@ class Main {
 
     displayMensa(pHtml) {
         document.querySelector('#essen').innerHTML = pHtml;
+    }
+
+    clickToggleTheme() {
+        if (main.settings.theme == "dark") {
+            main.settings.setTheme('light');
+        } else {
+            main.settings.setTheme('dark');
+        }
+
+        Theme.changeTheme(main.settings.theme);
     }
 
     changeKlasse() {

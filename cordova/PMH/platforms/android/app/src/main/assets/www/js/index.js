@@ -475,7 +475,7 @@ function setSave() {
 }
 
 //loadSMV();
-
+/*
 if (localStorage.getItem('first2') == null) {
     currentIndex = 5;
     $swipeTabs.removeClass(activeTabClassName);
@@ -484,6 +484,11 @@ if (localStorage.getItem('first2') == null) {
     $swipeTabsContentContainer.slick('slickGoTo', currentIndex);
 
 }
+
+/*/
+
+
+/*
 
 function changeKlasse() {
     reqPlan();
@@ -504,9 +509,9 @@ function changeUnKlasse() {
 
 }
 
+*/
 
-
-
+/*
 
 function ermittleUnKlassen() {
 
@@ -532,10 +537,14 @@ function ermittleUnKlassen() {
     }
 }
 
+*/
+
 //ermittleUnKlassen();
 
 $(".spsh").addClass("dnone");
 
+
+/*
 
 function toggleTheme() {
 
@@ -553,10 +562,14 @@ function toggleTheme() {
 
 }
 
+*/
+
 function updateBahn() {
     $('#bahn').html("<table><th>Abfahrt</th><th>Ziel</th>" + $("#bahnFrame").contents().find("tbody").html() + "</table>");
     //$("#bahnFrame").remove();
 }
+
+/*
 
 function changeTheme() {
 
@@ -565,17 +578,19 @@ function changeTheme() {
 
 }
 
+*/
 
+/*
 $('#bahnFrame').load(function() {
     setTimeout(function() {
         updateBahn();
     }, 5000);
 });
-
+*/
 
 
 //changeTheme();
-
+/*
 function openPop(data) {
 
     $(".popup").html('<i onclick="closePop();" class="ion-ios-close-empty"></i>' + data);
@@ -598,12 +613,13 @@ function closePop(data) {
 
 
 }
-
+*/
 main = new Main();
 if (main.settings.klasse != "") {
     main.requestVertretungsplan();
 }
 
+/*
 setInterval(function(){
     try{
     alert(document.querySelector("#bahnFrame").contentWindow.window);
@@ -611,3 +627,4 @@ setInterval(function(){
     Popup.open(e);
 }
 }, 2000);
+*/

@@ -1,0 +1,40 @@
+body[theme="dark"] .slick-initialized .swipe-tab.active-tab {
+    border-bottom-color: #fff;
+    color: #fff;
+    font-weight: bold;
+}
+
+body[theme="dark"] .head-bar {
+    width: calc(100vw - 30px);
+    height: 52px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background: #1d1d1d;
+    line-height: 60px;
+    font-size: 20px;
+    color: #fff;
+}
+
+body[theme="dark"]{
+    background: #1d1d1d;
+}
+
+body[theme="dark"] .main-container {
+    padding: 0px;
+    background: #323232;
+    color: #fff;
+    height: calc(100vh - 104px);
+}
+
+body[theme="dark"] .logo{
+	content:url("../img/logo2_dark.png");
+}
+
+body[theme="dark"] textarea{
+	color: #fff;
+}
+
+
+body[theme="dark"] .slick-initialized .swipe-tab:hover {
+  color: #fff;
+}
