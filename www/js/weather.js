@@ -27,6 +27,7 @@ class Weather {
             case "mixed rain and hail":
             case "scattered showers":
             case "rain":
+            case "heavy rain":
                 weatherType = "rainy";
                 break;
             case "tornado":
