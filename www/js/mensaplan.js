@@ -18,14 +18,16 @@ class Mensaplan {
         var newHTML = "";
 
         [...parsedHTML.getElementsByTagName("p")].forEach(function(element) {
-            if(element.innerText.includes("KW")) {
-                if(!element.innerText.includes("KW" + new Date().getWeekNumber())) {
+            if (element.innerText.includes("KW")) {
+                var weekNr = ((((new Date().getDay() == 0) ? (new Date().getWeekNumber() + 1) : (new Date().getWeekNumber())).toString().length == 1) ? "0" : "") + ((new Date().getDay() == 0) ? (new Date().getWeekNumber() + 1) : (new Date().getWeekNumber()));
+                console.log('Mensa WochenNr:', weekNr);
+                if (!element.innerText.includes("KW" + weekNr)) {
                     Popup.open("Der Speiseplan wurde noch nicht für diese Woche aktualisiert!");
                 }
             } else {
                 var dayElements = element.innerText.split("\n\n");
 
-                if(dayElements.length === 3) {
+                if (dayElements.length === 3) {
                     var dayName = dayElements[0].replace(":", "");
                     var foodDescription = dayElements[1];
                     var otherInfo = dayElements[2];

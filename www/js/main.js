@@ -28,16 +28,16 @@ class Main {
                     new VertretungsplanMaster(this.settings.klasse, this.settings.unterGruppe, true).then(function(pPlanN) {
                         VertretungsplanMaster.draw(pPlanN, true);
                         Toast.finish();
-                    }.bind(this));
-                }.bind(this));
-            } else {
+                    }.bind(this)).catch(Toast.finish);
+                }.bind(this)).catch(Toast.finish);
+            } else {    //nur klasse keine untergruppe
                 new VertretungsplanMaster(this.settings.klasse, 0, false).then(function(pPlan) {
                     VertretungsplanMaster.draw(pPlan, false);
                     new VertretungsplanMaster(this.settings.klasse, 0, true).then(function(pPlanN) {
                         VertretungsplanMaster.draw(pPlanN, true);
                         Toast.finish();
-                    }.bind(this));
-                }.bind(this));
+                    }.bind(this)).catch(Toast.finish);
+                }.bind(this)).catch(Toast.finish);
             }
         }
     }
