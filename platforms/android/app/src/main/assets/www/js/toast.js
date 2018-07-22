@@ -13,7 +13,8 @@ class Toast {
     	document.querySelector(".loadingPop").classList.add("load");
     }
 
-    static finish() {	//schließe Ladeanimation ab
+    static finish(e) {	//schließe Ladeanimation ab
         document.querySelector(".loadingPop").classList.remove("load");
+        console.log('Toast Message', e)
     }
 }

@@ -6,8 +6,8 @@ class VertretungsplanMaster {
         this.date = new Date();
         this.nextWeekDate = new Date();
         this.nextWeekDate.setDate(this.nextWeekDate.getDate() + 7);
-        this.week1 = (((this.date.getDay() == 0) ? (this.date.getWeekNumber() + 1) : (this.date.getWeekNumber()).toString().length == 1) ? "0" : "") + ((this.date.getDay() == 0) ? (this.date.getWeekNumber() + 1) : (this.date.getWeekNumber()));
-        this.week2 = (((this.nextWeekDate.getDay() == 0) ? (this.nextWeekDate.getWeekNumber() + 1) : (this.nextWeekDate.getWeekNumber()).toString().length == 1) ? "0" : "") + ((this.nextWeekDate.getDay() == 0) ? (this.nextWeekDate.getWeekNumber() + 1) : (this.nextWeekDate.getWeekNumber()));
+        this.week1 = ((((this.date.getDay() == 0) ? (this.date.getWeekNumber() + 1) : (this.date.getWeekNumber())).toString().length == 1) ? "0" : "") + ((this.date.getDay() == 0) ? (this.date.getWeekNumber() + 1) : (this.date.getWeekNumber()));
+        this.week2 = ((((this.nextWeekDate.getDay() == 0) ? (this.nextWeekDate.getWeekNumber() + 1) : (this.nextWeekDate.getWeekNumber())).toString().length == 1) ? "0" : "") + ((this.nextWeekDate.getDay() == 0) ? (this.nextWeekDate.getWeekNumber() + 1) : (this.nextWeekDate.getWeekNumber()));
         return new Promise(function(resolve, reject) { this.handle(resolve, reject); }.bind(this));
     }
 
@@ -19,11 +19,11 @@ class VertretungsplanMaster {
                     new Vertretungsplan(this.week1, this.unterGruppeVal).req().then(function(plan2) {
                         this.plan2 = plan2;
                         resolve(VertretungsplanMaster.merge(this.plan1, this.plan2));
-                    }.bind(this));
+                    }.bind(this)).catch(function() { resolve(this.plan1); }.bind(this));
                 } else {
                     resolve(this.plan1);
                 }
-            }.bind(this));
+            }.bind(this)).catch(reject);
         } else {
             new Vertretungsplan(this.week2, this.klasseVal).req().then(function(plan1) {
                 this.plan1 = plan1;
@@ -31,11 +31,15 @@ class VertretungsplanMaster {
                     new Vertretungsplan(this.week2, this.unterGruppeVal).req().then(function(plan2) {
                         this.plan2 = plan2;
                         resolve(VertretungsplanMaster.merge(this.plan1, this.plan2));
-                    }.bind(this));
+                    }.bind(this)).catch(function() { resolve(this.plan1); }.bind(this));
                 } else {
                     resolve(this.plan1);
                 }
-            }.bind(this));
+            }.bind(this).catch(
+                function(argument) {
+                    reject();
+                }.bind(this)
+            ));
         }
     }
 
@@ -244,7 +248,7 @@ class Vertretungsplan {
             }.bind(this),
             function(err) {
                 this.reject();
-                Popup.open(err);
+                //Popup.open(this.KW+'-'+this.klasseId+':'+err);
             }.bind(this));
     }
 }

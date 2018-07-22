@@ -447,10 +447,19 @@ select {
     left: -20000vw;
 }
 
+#bahn tr{
+    height: 2.6rem;
+}
+
 #bahn th {
     font-weight: bold;
     text-align: left;
     padding-left: 10px;
+}
+
+#bahn td{
+    line-height: 1.0rem;
+    vertical-align: top;
 }
 
 #bahn td:nth-child(3),
@@ -460,6 +469,11 @@ select {
 #bahn td:nth-child(5),
 #bahn th:nth-child(5) {
     display: none;
+}
+
+#bahn .tripMessage{
+    font-size: 0.8rem;
+    color: #f24137;
 }
 
 #bahn td:nth-child(2) {

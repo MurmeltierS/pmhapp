@@ -23,6 +23,9 @@
     },
     "cordova-plugin-badge": {
       "PACKAGE_NAME": "de.kkductions.pmhsmv"
+    },
+    "cordova-plugin-app-event": {
+      "PACKAGE_NAME": "de.kkductions.pmhsmv"
     }
   }
 }

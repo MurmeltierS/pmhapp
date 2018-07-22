@@ -1,0 +1,25 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-local-notification": {
+            "PACKAGE_NAME": "de.kkductions.pmhsmv"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "de.kkductions.pmhsmv"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-badge": {
+            "PACKAGE_NAME": "de.kkductions.pmhsmv"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "de.kkductions.pmhsmv"
+        }
+    }
+}
