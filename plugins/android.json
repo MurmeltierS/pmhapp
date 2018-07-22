@@ -1,22 +1,28 @@
 {
-  "prepare_queue": {
-    "installed": [],
-    "uninstalled": []
-  },
-  "config_munge": {
-    "files": {}
-  },
-  "installed_plugins": {
-    "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "de.kkductions.pmhsmv"
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
     },
-    "cordova-plugin-background-fetch": {
-      "PACKAGE_NAME": "de.kkductions.pmhsmv"
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "de.kkductions.pmhsmv"
+        },
+        "cordova-plugin-background-fetch": {
+            "PACKAGE_NAME": "de.kkductions.pmhsmv"
+        },
+        "de.appplant.cordova.plugin.local-notification": {
+            "PACKAGE_NAME": "de.kkductions.pmhsmv"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-app-event": {
+            "PACKAGE_NAME": "de.kkductions.pmhsmv"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "de.kkductions.pmhsmv"
+        }
     }
-  },
-  "dependent_plugins": {
-    "cordova-plugin-app-event": {
-      "PACKAGE_NAME": "de.kkductions.pmhsmv"
-    }
-  }
 }

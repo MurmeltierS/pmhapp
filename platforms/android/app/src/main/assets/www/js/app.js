@@ -30,11 +30,44 @@ intel.xdk.device.hideSplashScreen();
 // by the same event or other events.
 
 function onAppReady() {
-    if( navigator.splashscreen && navigator.splashscreen.hide ) {   // Cordova API detected
-        navigator.splashscreen.hide() ;
+    if (navigator.splashscreen && navigator.splashscreen.hide) { // Cordova API detected
+        navigator.splashscreen.hide();
     }
 }
-document.addEventListener("app.Ready", onAppReady, false) ;
+document.addEventListener("app.Ready", onAppReady, false);
+
+
+onDeviceReady: function() {
+    alert("device ready");
+    var BackgroundFetch = window.BackgroundFetch;
+
+    // Your background-fetch handler.
+    var fetchCallback = function() {
+        cordova.plugins.notification.local.schedule({
+            title: 'Background notification',
+            text: 'Thats pretty easy...',
+            foreground: true
+        });
+        console.log('[js] BackgroundFetch event received');
+
+        // Required: Signal completion of your task to native code
+        // If you fail to do this, the OS can terminate your app
+        // or assign battery-blame for consuming too much background-time
+        BackgroundFetch.finish();
+    };
+
+    var failureCallback = function(error) {
+        console.log('- BackgroundFetch failed', error);
+    };
+
+    BackgroundFetch.configure(fetchCallback, failureCallback, {
+        minimumFetchInterval: 15, // <-- default is 15
+        stopOnTerminate: false, // <-- Android only
+        startOnBoot: true, // <-- Android only
+        forceReload: true // <-- Android only
+    });
+}
+
 // document.addEventListener("deviceready", onAppReady, false) ;
 // document.addEventListener("onload", onAppReady, false) ;
 

@@ -23,6 +23,13 @@
         <param name="ios-package" value="CDVBackgroundFetch" />
         <param name="onload" value="true" />
     </feature>
+    <feature name="Device">
+        <param name="ios-package" value="CDVDevice" />
+    </feature>
+    <feature name="LocalNotification">
+        <param name="ios-package" onload="true" value="APPLocalNotification" />
+        <param name="onload" value="true" />
+    </feature>
     <name>PMH</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
@@ -53,4 +60,5 @@
     <preference name="PageLength" value="0" />
     <preference name="PaginationBreakingMode" value="page" />
     <preference name="PaginationMode" value="unpaginated" />
+    <preference name="phonegap-version" value="cli-6.5.0" />
 </widget>
