@@ -22,7 +22,7 @@ intel.xdk.device.hideSplashScreen();
 // el = document.getElementById("id_myButton") ;
 // el.addEventListener("click", myEventHandler, false) ;
 
-
+test = 0;
 
 // The function below is an example of the best way to "start" your app.
 // This example is calling the standard Cordova "hide splashscreen" function.
@@ -43,6 +43,7 @@ onDeviceReady: function() {
 
     // Your background-fetch handler.
     var fetchCallback = function() {
+    	test++;
         cordova.plugins.notification.local.schedule({
             title: 'Background notification',
             text: 'Thats pretty easy...',
@@ -57,6 +58,7 @@ onDeviceReady: function() {
     };
 
     var failureCallback = function(error) {
+    	alert("fail");
         console.log('- BackgroundFetch failed', error);
     };
 
