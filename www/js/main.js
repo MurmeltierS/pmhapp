@@ -96,3 +96,41 @@ class Main {
     }
 
 }
+
+var test = 0;
+
+document.addEventListener("app.Ready", onAppReady, false);
+
+
+function onAppReady() {
+    alert("device ready");
+    var BackgroundFetch = window.BackgroundFetch;
+
+    // Your background-fetch handler.
+    var fetchCallback = function() {
+        test++;
+        cordova.plugins.notification.local.schedule({
+            title: 'Background notification',
+            text: 'Thats pretty easy...',
+            foreground: true
+        });
+        console.log('[js] BackgroundFetch event received');
+
+        // Required: Signal completion of your task to native code
+        // If you fail to do this, the OS can terminate your app
+        // or assign battery-blame for consuming too much background-time
+        BackgroundFetch.finish();
+    };
+
+    var failureCallback = function(error) {
+        alert("fail");
+        console.log('- BackgroundFetch failed', error);
+    };
+
+    BackgroundFetch.configure(fetchCallback, failureCallback, {
+        minimumFetchInterval: 15, // <-- default is 15
+        stopOnTerminate: false, // <-- Android only
+        startOnBoot: true, // <-- Android only
+        forceReload: true // <-- Android only
+    });
+}
