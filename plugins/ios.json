@@ -12,17 +12,7 @@
     },
     "cordova-plugin-background-fetch": {
       "PACKAGE_NAME": "de.kkductions.pmhsmv"
-    },
-    "cordova-plugin-local-notification": {
-      "PACKAGE_NAME": "de.kkductions.pmhsmv"
     }
   },
-  "dependent_plugins": {
-    "cordova-plugin-device": {
-      "PACKAGE_NAME": "de.kkductions.pmhsmv"
-    },
-    "cordova-plugin-badge": {
-      "PACKAGE_NAME": "de.kkductions.pmhsmv"
-    }
-  }
+  "dependent_plugins": {}
 }
