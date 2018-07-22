@@ -27,5 +27,5 @@
     <engine name="android" spec="^7.0.0" />
     <engine name="ios" spec="^4.5.4" />
     <plugin name="cordova-plugin-background-fetch" spec="^5.4.1" />
-    <gap:plugin name="de.appplant.cordova.plugin.local-notification" version="0.8.1" />
+    <gap:plugin name="de.appplant.cordova.plugin.local-notification" source="npm" />
 </widget>
