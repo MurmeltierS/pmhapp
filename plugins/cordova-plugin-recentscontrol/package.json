@@ -1,0 +1,60 @@
+{
+  "_from": "git+https://github.com/smcpjames/cordova-plugin-recentscontrol.git",
+  "_id": "cordova-plugin-recentscontrol@1.1.0",
+  "_inBundle": false,
+  "_location": "/cordova-plugin-recentscontrol",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "https://github.com/smcpjames/cordova-plugin-recentscontrol",
+    "rawSpec": "https://github.com/smcpjames/cordova-plugin-recentscontrol",
+    "saveSpec": "git+https://github.com/smcpjames/cordova-plugin-recentscontrol.git",
+    "fetchSpec": "https://github.com/smcpjames/cordova-plugin-recentscontrol.git",
+    "gitCommittish": null
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/smcpjames/cordova-plugin-recentscontrol.git#95342c247a225a58383a558e26a9c3ad9da3dd86",
+  "_spec": "https://github.com/smcpjames/cordova-plugin-recentscontrol",
+  "_where": "C:\\Users\\Kevin\\Documents\\PMH\\pmhapp",
+  "author": {
+    "name": "James M. Joyce, Flashpoint Computer Services, LLC"
+  },
+  "bugs": {
+    "url": "https://github.com/fpcsjames/cordova-plugin-recentscontrol/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "net.flashpointcs.cordova.recentscontrol",
+    "platforms": [
+      "android"
+    ]
+  },
+  "deprecated": false,
+  "description": "Set the Recents title bar color and label in Android 5.0+",
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.7.1"
+    }
+  ],
+  "homepage": "https://github.com/fpcsjames/cordova-plugin-recentscontrol#readme",
+  "keywords": [
+    "android",
+    "recents",
+    "color",
+    "label",
+    "description",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "license": "MIT",
+  "name": "cordova-plugin-recentscontrol",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fpcsjames/cordova-plugin-recentscontrol.git"
+  },
+  "version": "1.1.0"
+}

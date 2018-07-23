@@ -17,6 +17,8 @@
         "cordova-plugin-device": "^2.0.2",
         "cordova-plugin-local-notification": "git+https://github.com/MurmeltierS/cordova-plugin-local-notifications.git",
         "cordova-plugin-logcat": "git+https://github.com/Murthy582/Cordova-Logcat.git",
+        "cordova-plugin-recentscontrol": "git+https://github.com/smcpjames/cordova-plugin-recentscontrol.git",
+        "cordova-plugin-statusbar": "^2.1.3",
         "cordova-plugin-whitelist": "^1.3.3",
         "de.appplant.cordova.plugin.local-notification": "git+https://github.com/katzer/cordova-plugin-local-notifications.git#0.8.5",
         "pushwoosh-cordova-plugin": "^6.0.2"
@@ -29,7 +31,9 @@
                 "LOG_LEVEL": "DEBUG",
                 "IOS_FOREGROUND_ALERT_TYPE": "NONE",
                 "ANDROID_FOREGROUND_PUSH": "false"
-            }
+            },
+            "cordova-plugin-statusbar": {},
+            "cordova-plugin-recentscontrol": {}
         },
         "platforms": [
             "android",

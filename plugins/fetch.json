@@ -62,5 +62,21 @@
     },
     "is_top_level": true,
     "variables": {}
+  },
+  "cordova-plugin-statusbar": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-statusbar@~2.1.2"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-recentscontrol": {
+    "source": {
+      "type": "registry",
+      "id": "https://github.com/smcpjames/cordova-plugin-recentscontrol"
+    },
+    "is_top_level": true,
+    "variables": {}
   }
 }

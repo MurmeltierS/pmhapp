@@ -21,6 +21,12 @@
       "IOS_FOREGROUND_ALERT_TYPE": "NONE",
       "ANDROID_FOREGROUND_PUSH": "false",
       "PACKAGE_NAME": "de.kkductions.pmhsmv"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "de.kkductions.pmhsmv"
+    },
+    "cordova-plugin-recentscontrol": {
+      "PACKAGE_NAME": "de.kkductions.pmhsmv"
     }
   },
   "dependent_plugins": {

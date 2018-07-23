@@ -50,6 +50,22 @@ module.exports = [
     "clobbers": [
       "plugins.pushNotification"
     ]
+  },
+  {
+    "id": "cordova-plugin-statusbar.statusbar",
+    "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
+    "pluginId": "cordova-plugin-statusbar",
+    "clobbers": [
+      "window.StatusBar"
+    ]
+  },
+  {
+    "id": "cordova-plugin-recentscontrol.recentscontrol",
+    "file": "plugins/cordova-plugin-recentscontrol/www/recentscontrol.js",
+    "pluginId": "cordova-plugin-recentscontrol",
+    "clobbers": [
+      "window.RecentsControl"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -60,7 +76,9 @@ module.exports.metadata =
   "cordova-plugin-device": "2.0.2",
   "cordova-plugin-app-event": "1.2.1",
   "de.appplant.cordova.plugin.local-notification": "0.8.5",
-  "pushwoosh-cordova-plugin": "6.0.2"
+  "pushwoosh-cordova-plugin": "6.0.2",
+  "cordova-plugin-statusbar": "2.1.3",
+  "cordova-plugin-recentscontrol": "1.1.0"
 };
 // BOTTOM OF METADATA
 });
