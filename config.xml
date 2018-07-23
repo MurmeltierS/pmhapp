@@ -11,10 +11,10 @@
     <preference name="phonegap-version" value="cli-8.0.0" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="21" />
-    <preference name="StatusBarBackgroundColor" value="#ffffff" />
-    <preference name="RecentsBackgroundColor" value="#F24137" />
-    <preference name="RecentsDescription" value="#ffffff" />
-    <preference name="StatusBarStyle" value="blacktranslucent" />
+    <preference name="StatusBarBackgroundColor" value="#1d1d1d" />
+    <preference name="RecentsBackgroundColor" value="#ffffff" />
+    <preference name="RecentsDescription" value="SMV" />
+    
 
     <plugin name="cordova-plugin-battery-status" source="npm" spec="~1.1.1" />
     <plugin name="cordova-plugin-camera" source="npm" spec="~2.1.1" />
