@@ -1,9 +1,9 @@
 class Mensaplan {
-    fetchMensaPage(doWithData, whenFailed) {
+    fetchMensaPage(doWithData, whenFailed, asObj) {
         Ajax.getURL(
             "https://www.gsz-zak.de/wp/mensaplan/",
             function(resTxt) {
-                doWithData(this.parseMensaContent(resTxt));
+                doWithData(this.parseMensaContent(resTxt, asObj));
             }.bind(this),
             function() {
                 whenFailed();
@@ -11,10 +11,10 @@ class Mensaplan {
         );
     }
 
-    parseMensaContent(pageContent) {
+    parseMensaContent(pageContent, asObj) {
         var parser = new DOMParser();
         var parsedHTML = parser.parseFromString(pageContent, "text/html");
-
+        var array = new Array();
         var newHTML = "";
 
         [...parsedHTML.getElementsByTagName("p")].forEach(function(element) {
@@ -36,11 +36,19 @@ class Mensaplan {
                     var formattedFoodDescription = "<p><b>" + foodDescription + "</b></p>";
                     var formattedOtherInfo = "<p><small>" + otherInfo + "</small></p>";
 
+                    var tempObject = new Object();
+                    tempObject.dayName = dayName;
+                    tempObject.foodDescription = foodDescription;
+                    tempObject.otherInfo = otherInfo;
+                    array.push(tempObject);
+
                     newHTML += formattedDayName + formattedFoodDescription + formattedOtherInfo + "<br>";
                 }
             }
         });
-
+        if(asObj){
+            return array;
+        }
         return newHTML;
     }
 }

@@ -1,3 +1,10 @@
+/*
+cordova = new Object();
+cordova.plugins = new Object();
+cordova.plugins.notification = new Object();
+cordova.plugins.notification.local = new Object();
+cordova.plugins.notification.local.schedule = function(e) { console.log(e) };
+*/
 class Main {
     constructor() {
         this.settings = new Settings(); // hole Settings aus dem Storage oder erstelle neues Settingsobjekt
@@ -95,37 +102,86 @@ class Main {
         });
     }
 
+    requestMensaplanForNotif(resolve, reject) {
+        var mensaplan = new Mensaplan();
+        mensaplan.fetchMensaPage(
+            function(obj) {
+                try {
+                    var dayNr = (new Date().getDay()) - 1;
+                    cordova.plugins.notification.local.schedule({
+                        title: 'Essen am ' + obj[dayNr].dayName,
+                        text: obj[dayNr].foodDescription,
+                        foreground: true
+                    });
+                } catch (e) {
+                    cordova.plugins.notification.local.schedule({
+                        title: 'Error notification',
+                        text: e,
+                        foreground: true
+                    });
+                    test = e;
+                }
+
+                resolve();
+
+            }.bind(this),
+            function() {
+                Popup.open("Verbindung zur Mensa-Seite fehlgeschlagen!");
+                reject();
+            }.bind(this), true
+        );
+    }
+
+    createNotif() {
+        return new Promise(function(res, rej) { main.requestMensaplanForNotif(res, rej); }.bind(this));
+    }
+
 }
 
-var test = 0;
-
+var test = "";
+var BackgroundFetch;
 document.addEventListener("app.Ready", onAppReady, false);
 
 
 function onAppReady() {
     try {
         alert("device ready");
-        var BackgroundFetch = window.BackgroundFetch;
+        BackgroundFetch = window.BackgroundFetch;
         //alert(JSON.stringify(window));
         alert(window.BackgroundFetch)
         alert(JSON.stringify(BackgroundFetch));
         // Your background-fetch handler.
         var fetchCallback = function() {
-            
 
-            try{
 
-            }catch(){
-                
+            try {
+                main.createNotif().then(function(argument) {
+                    BackgroundFetch.finish();
+                }).catch(function(e) {
+                    cordova.plugins.notification.local.schedule({
+                        title: 'Error notification',
+                        text: e,
+                        foreground: true
+                    });
+                    BackgroundFetch.finish();
+                })
+            } catch (e) {
+                test = e;
+                cordova.plugins.notification.local.schedule({
+                    title: 'Error notification',
+                    text: e,
+                    foreground: true
+                });
+                BackgroundFetch.finish();
             }
 
-            
-            console.log('[js] BackgroundFetch event received');
-            test++;
+
+            //console.log('[js] BackgroundFetch event received');
+            //test++;
             // Required: Signal completion of your task to native code
             // If you fail to do this, the OS can terminate your app
             // or assign battery-blame for consuming too much background-time
-            BackgroundFetch.finish();
+            //BackgroundFetch.finish();
         };
 
         var failureCallback = function(error) {
