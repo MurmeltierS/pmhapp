@@ -103,122 +103,6 @@ $swipeTabsContentContainer.on('swipe', function(event, slick, direction) {
 
 
 
-function drawPlan(data, pDel, pNext) {
-    if (pNext === true) {
-
-        for (var i = 0; i < data.length; i++) {
-
-            (pDel || ($("#dayN" + i + " table").html() == "<tbody><tr><td>Keine Vertretung</td></tr></tbody>")) ? $("#dayN" + i + " table").html(''): 0;
-            try {
-                for (var j = 0; j < data[i].length; j = j + 1) {
-                    if (data[i][j][1] != undefined && (data[i][j][1] + data[i][j][2] + data[i][j][4] + data[i][j][5]).replace(/&nbsp;/gi, '') != "") {
-
-
-                        var moreInfo = "";
-                        var margin = 0;
-                        while (data[i].length > (j + margin) || margin == 0) {
-                            if (data[i][j + margin][1].replace(/&nbsp;/gi, '') == "" || margin == 0) {
-                                moreInfo += " " + data[i][j + margin][6];
-                                margin++;
-                            } else {
-                                break;
-                            }
-                        }
-
-                        $("#dayN" + i + " table").append(
-                            "<tr>" +
-                            "<td class=\"stunde\">" +
-                            data[i][j][1] +
-                            "</td>" +
-                            "<td class=\"fach\">" +
-                            data[i][j][2] +
-                            "</td>" +
-                            "<td style=\"display:none;\">" +
-                            data[i][j][4] +
-                            "</td>" +
-                            "<td class=\"verTyp\">" +
-                            data[i][j][5] +
-                            "</td>" +
-                            "<td style=\"text-align: right; font-size: 28px; color: #F24137;\" onclick=\"openPop('<h1>" + data[i][j][2] + "</h1><h2>" + data[i][j][4].replace("→", " → ") + "</h2><br>" + data[i][j][5] + "<br>" + moreInfo
-
-                            +
-                            "')\">" +
-                            "<i " + ((moreInfo.replace(/&nbsp;/g, '').replace(/\s*/g, '') != "" || data[i][j][4].match(/→/g) != null) ? (moreInfo) : (moreInfo + " style=\"color:#ada6a6;\" ")) + " class=\"ion-ios-information-outline\"></i>" +
-                            "</td>" +
-                            "</tr>"
-                        );
-
-                        //console.log(moreInfo.replace(/&nbsp;/g, '').replace(/\s*/g, ''));
-
-
-                    } else {
-                        if (data[i][j].length == 1 && $("#dayN" + i + " table").html() == "")
-                            $("#dayN" + i + " table").append("<tr><td>Keine Vertretung</td></tr>");
-
-                    }
-                }
-            } catch (e) {}
-        }
-
-    } else {
-        for (var i = 0; i < data.length; i++) {
-            (pDel || ($("#day" + i + " table").html() == "<tbody><tr><td>Keine Vertretung</td></tr></tbody>")) ? $("#day" + i + " table").html(''): 0;
-            try {
-
-                for (var j = 0; j < data[i].length; j = j + 1) {
-
-                    if (data[i][j][1] != undefined && (data[i][j][1] + data[i][j][2] + data[i][j][4] + data[i][j][5]).replace(/&nbsp;/gi, '') != "") {
-
-
-                        var moreInfo = "";
-                        var margin = 0;
-                        while (data[i].length > (j + margin) || margin == 0) {
-                            if (data[i][j + margin][1].replace(/&nbsp;/gi, '') == "" || margin == 0) {
-                                moreInfo += " " + data[i][j + margin][6];
-                                margin++;
-                            } else {
-                                break;
-                            }
-                        }
-
-                        $("#day" + i + " table").append(
-                            "<tr>" +
-                            "<td class=\"stunde\">" +
-                            data[i][j][1] +
-                            "</td>" +
-                            "<td class=\"fach\">" +
-                            data[i][j][2] +
-                            "</td>" +
-                            "<td style=\"display:none;\">" +
-                            data[i][j][4] +
-                            "</td>" +
-                            "<td class=\"verTyp\">" +
-                            data[i][j][5] +
-                            "</td>" +
-                            "<td style=\"text-align: right; font-size: 28px; color: #F24137;\" onclick=\"openPop('<h1>" + data[i][j][2] + "</h1><h2>" + data[i][j][4].replace("→", " → ") + "</h2><br>" + data[i][j][5] + "<br>" + moreInfo
-
-                            +
-                            "')\">" +
-                            "<i " + ((moreInfo.replace(/&nbsp;/g, '').replace(/\s*/g, '') != "" || data[i][j][4].match(/→/g) != null) ? (moreInfo) : (moreInfo + " style=\"color:#ada6a6;\" ")) + " class=\"ion-ios-information-outline\"></i>" +
-                            "</td>" +
-                            "</tr>"
-                        );
-
-
-                    } else {
-                        if (data[i][j].length == 1 && $("#day" + i + " table").html() == "")
-                            $("#day" + i + " table").append("<tr><td>Keine Vertretung</td></tr>");
-
-                    }
-                    //j = j+margin;
-                    ////console.log(j);
-                }
-            } catch (e) {
-                //console.log(e.message);
-            }
-        }
-    }
-}
 
 function drawInfo(pData, pNext) {
 
@@ -614,10 +498,18 @@ function closePop(data) {
 
 }
 */
-main = new Main();
-if (main.settings.klasse != "") {
-    main.requestVertretungsplan();
+
+var main;
+document.addEventListener("deviceready", startMain, false);
+
+function startMain() {
+    main = new Main();
+    if (main.settings.klasse != "") {
+        main.requestVertretungsplan();
+    }
 }
+
+
 
 /*
 setInterval(function() {
