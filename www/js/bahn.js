@@ -6,7 +6,11 @@ class Bahn {
     static init() {
         document.querySelector('#bahnFrame').onload = function() {
             setTimeout(function() {
-                Bahn.update();
+                try {
+                    Bahn.update();
+                } catch (e) {
+                    alert(e);
+                }
             }, 5000);
         }.bind(this);
 
@@ -33,7 +37,7 @@ class Bahn {
                     //alert(msg == "\u00A0");
                     //tr[i].querySelectorAll("td")[1].innerHTML += '<div style="float:right" onclick="Popup.open(\'' + msg + '\')"><i style="font-size:1.1rem;color:#F24137;" class="ion-ios-information-outline"></i></div>';
 
-                    tr[i].querySelectorAll("td")[0].innerHTML += '<br><span class="tripMessage">'+msg+'</span>';
+                    tr[i].querySelectorAll("td")[0].innerHTML += '<br><span class="tripMessage">' + msg + '</span>';
 
                 } else {
                     //tr[i].querySelector("td")[1].innerHTML += '<div style="float:right"><i &nbsp;="" style="float:right;font-size:1.1rem;color:#ada6a6;" class="ion-ios-information-outline"></i></div>';
