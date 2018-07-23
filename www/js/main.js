@@ -106,6 +106,7 @@ function onAppReady() {
     try {
         alert("device ready");
         var BackgroundFetch = window.BackgroundFetch;
+        alert(JSON.stringify(window));
         alert(window.BackgroundFetch)
         alert(JSON.stringify(BackgroundFetch));
         // Your background-fetch handler.
