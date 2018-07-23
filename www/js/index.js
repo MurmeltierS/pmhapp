@@ -502,6 +502,14 @@ function closePop(data) {
 var main;
 document.addEventListener("deviceready", startMain, false);
 
+function startDebug(){
+    StatusBar = new Object();
+    StatusBar.backgroundColorByHexString = function(e){console.log(e)};
+    RecentsControl = new Object();
+    RecentsControl.setColor = function(e){console.log(e)};
+    startMain();
+}
+
 function startMain() {
     main = new Main();
     if (main.settings.klasse != "") {
