@@ -447,7 +447,7 @@ select {
     left: -20000vw;
 }
 
-#bahn tr{
+#bahn tr {
     height: 2.6rem;
 }
 
@@ -457,9 +457,13 @@ select {
     padding-left: 10px;
 }
 
-#bahn td{
+#bahn td {
     line-height: 1.0rem;
     vertical-align: top;
+}
+
+#bahn td:first-child {
+    width: 50%;
 }
 
 #bahn td:nth-child(3),
@@ -471,13 +475,14 @@ select {
     display: none;
 }
 
-#bahn .tripMessage{
+#bahn .tripMessage {
     font-size: 0.8rem;
     color: #f24137;
 }
 
 #bahn td:nth-child(2) {
     border-right: none;
+    overflow: hidden;
 }
 
 #bahn span:nth-child(2) {
@@ -490,7 +495,7 @@ select {
 
 
 .weatherArea {
-    position: absolute; 
+    position: absolute;
     right: 15px;
 }
 
