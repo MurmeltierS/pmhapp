@@ -66,6 +66,14 @@ module.exports = [
     "clobbers": [
       "window.RecentsControl"
     ]
+  },
+  {
+    "id": "cordova-plugin-battery-status.battery",
+    "file": "plugins/cordova-plugin-battery-status/www/battery.js",
+    "pluginId": "cordova-plugin-battery-status",
+    "clobbers": [
+      "navigator.battery"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -78,7 +86,8 @@ module.exports.metadata =
   "de.appplant.cordova.plugin.local-notification": "0.8.5",
   "pushwoosh-cordova-plugin": "6.0.2",
   "cordova-plugin-statusbar": "2.1.3",
-  "cordova-plugin-recentscontrol": "1.1.0"
+  "cordova-plugin-recentscontrol": "1.1.0",
+  "cordova-plugin-battery-status": "1.1.2"
 };
 // BOTTOM OF METADATA
 });

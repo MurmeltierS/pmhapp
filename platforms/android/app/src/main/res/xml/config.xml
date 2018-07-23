@@ -42,4 +42,7 @@
         <param name="android-package" value="net.flashpointcs.cordova.recentscontrol.RecentsControl" />
         <param name="onload" value="true" />
     </feature>
+    <feature name="Battery">
+        <param name="android-package" value="org.apache.cordova.batterystatus.BatteryListener" />
+    </feature>
 </widget>

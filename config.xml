@@ -14,6 +14,8 @@
     <preference name="StatusBarBackgroundColor" value="#ffffff" />
     <preference name="RecentsBackgroundColor" value="#F24137" />
     <preference name="RecentsDescription" value="#ffffff" />
+    <preference name="StatusBarStyle" value="blacktranslucent" />
+
     <plugin name="cordova-plugin-battery-status" source="npm" spec="~1.1.1" />
     <plugin name="cordova-plugin-camera" source="npm" spec="~2.1.1" />
     <plugin name="cordova-plugin-media-capture" source="npm" spec="~1.2.0" />

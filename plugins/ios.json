@@ -27,6 +27,9 @@
     },
     "cordova-plugin-recentscontrol": {
       "PACKAGE_NAME": "de.kkductions.pmhsmv"
+    },
+    "cordova-plugin-battery-status": {
+      "PACKAGE_NAME": "de.kkductions.pmhsmv"
     }
   },
   "dependent_plugins": {

@@ -44,6 +44,7 @@
 		E15BFD943822478C918C6E92 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F24AC1F18B14CCE99D81671 /* libstdc++.dylib */; };
 		A57422F29BCE4EB880197454 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D877C4789A0C4F3EB030D13F /* libz.dylib */; };
 		0E147A17739C4F8A8B91841B /* CDVStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A858EDB0055B46FEBCFB0C98 /* CDVStatusBar.m */; };
+		29A382B66BC242B3B7196CD5 /* CDVBattery.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BF2C4D3F1846559443DD6A /* CDVBattery.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +136,8 @@
 		D877C4789A0C4F3EB030D13F /* libz.dylib */ = {isa = PBXFileReference; name = "libz.dylib"; path = "usr/lib/libz.dylib"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = compiled.mach-o.dylib; explicitFileType = undefined; includeInIndex = 0; };
 		A858EDB0055B46FEBCFB0C98 /* CDVStatusBar.m */ = {isa = PBXFileReference; name = "CDVStatusBar.m"; path = "cordova-plugin-statusbar/CDVStatusBar.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 		1B28706C24E2470E8B21A39B /* CDVStatusBar.h */ = {isa = PBXFileReference; name = "CDVStatusBar.h"; path = "cordova-plugin-statusbar/CDVStatusBar.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		92BF2C4D3F1846559443DD6A /* CDVBattery.m */ = {isa = PBXFileReference; name = "CDVBattery.m"; path = "cordova-plugin-battery-status/CDVBattery.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		96F1E7F9CDE14D2986E0D788 /* CDVBattery.h */ = {isa = PBXFileReference; name = "CDVBattery.h"; path = "cordova-plugin-battery-status/CDVBattery.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -297,6 +300,8 @@
 				E5EF4CAB0F9B421EAC2F88F8 /* PWLog.h */,
 				A858EDB0055B46FEBCFB0C98 /* CDVStatusBar.m */,
 				1B28706C24E2470E8B21A39B /* CDVStatusBar.h */,
+				92BF2C4D3F1846559443DD6A /* CDVBattery.m */,
+				96F1E7F9CDE14D2986E0D788 /* CDVBattery.h */,
 			);
 			name = Plugins;
 			path = "PMH/Plugins";
@@ -429,6 +434,7 @@
 				15D66A30CF0F4543B04D39A4 /* UILocalNotification+APPLocalNotification.ios9.m in Sources */,
 				B116A3675C5241CCBAF31E47 /* PushNotification.m in Sources */,
 				0E147A17739C4F8A8B91841B /* CDVStatusBar.m in Sources */,
+				29A382B66BC242B3B7196CD5 /* CDVBattery.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
