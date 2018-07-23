@@ -13,7 +13,13 @@ class Bahn {
                 }
             }, 5000);
         }.bind(this);
-
+        setTimeout(function() {
+            try {
+                Bahn.update();
+            } catch (e) {
+                alert(e);
+            }
+        }, 5000);
     }
 
     static update() {
@@ -26,6 +32,7 @@ class Bahn {
         cr++;
 
         var tr = document.querySelector("#bahn").querySelectorAll("tr");
+        Popup.open(tr.innerHTML);
         cr++;
         for (var i = 1; i < tr.length; i++) {
             try {
