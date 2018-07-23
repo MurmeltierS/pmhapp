@@ -12,6 +12,18 @@
                             "xml": "<array><string>fetch</string></array>",
                             "count": 1
                         }
+                    ],
+                    "Pushwoosh_LOG_LEVEL": [
+                        {
+                            "xml": "<string>DEBUG</string>",
+                            "count": 1
+                        }
+                    ],
+                    "Pushwoosh_ALERT_TYPE": [
+                        {
+                            "xml": "<string>NONE</string>",
+                            "count": 1
+                        }
                     ]
                 }
             },
@@ -28,6 +40,20 @@
                         },
                         {
                             "xml": "<feature name=\"LocalNotification\"><param name=\"ios-package\" onload=\"true\" value=\"APPLocalNotification\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"PushNotification\"><param name=\"ios-package\" value=\"PushNotification\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "undefined": {
+                "parents": {
+                    "undefined": [
+                        {
+                            "xml": "<access origin=\"*.pushwoosh.com\" />",
                             "count": 1
                         }
                     ]
@@ -49,6 +75,12 @@
             "PACKAGE_NAME": "de.kkductions.pmhsmv"
         },
         "de.appplant.cordova.plugin.local-notification": {
+            "PACKAGE_NAME": "de.kkductions.pmhsmv"
+        },
+        "pushwoosh-cordova-plugin": {
+            "LOG_LEVEL": "DEBUG",
+            "IOS_FOREGROUND_ALERT_TYPE": "NONE",
+            "ANDROID_FOREGROUND_PUSH": "false",
             "PACKAGE_NAME": "de.kkductions.pmhsmv"
         }
     },
@@ -96,6 +128,14 @@
                 "cordova.plugins.notification.local.core",
                 "plugin.notification.local.core"
             ]
+        },
+        {
+            "id": "pushwoosh-cordova-plugin.PushNotification",
+            "file": "plugins/pushwoosh-cordova-plugin/www/PushNotification.js",
+            "pluginId": "pushwoosh-cordova-plugin",
+            "clobbers": [
+                "plugins.pushNotification"
+            ]
         }
     ],
     "plugin_metadata": {
@@ -103,6 +143,7 @@
         "cordova-plugin-background-fetch": "5.4.1",
         "cordova-plugin-device": "2.0.2",
         "cordova-plugin-app-event": "1.2.1",
-        "de.appplant.cordova.plugin.local-notification": "0.8.5"
+        "de.appplant.cordova.plugin.local-notification": "0.8.5",
+        "pushwoosh-cordova-plugin": "6.0.2"
     }
 }

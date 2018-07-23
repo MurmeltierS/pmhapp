@@ -42,6 +42,14 @@ module.exports = [
       "cordova.plugins.notification.local.core",
       "plugin.notification.local.core"
     ]
+  },
+  {
+    "id": "pushwoosh-cordova-plugin.PushNotification",
+    "file": "plugins/pushwoosh-cordova-plugin/www/PushNotification.js",
+    "pluginId": "pushwoosh-cordova-plugin",
+    "clobbers": [
+      "plugins.pushNotification"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -51,7 +59,8 @@ module.exports.metadata =
   "cordova-plugin-background-fetch": "5.4.1",
   "cordova-plugin-device": "2.0.2",
   "cordova-plugin-app-event": "1.2.1",
-  "de.appplant.cordova.plugin.local-notification": "0.8.5"
+  "de.appplant.cordova.plugin.local-notification": "0.8.5",
+  "pushwoosh-cordova-plugin": "6.0.2"
 };
 // BOTTOM OF METADATA
 });

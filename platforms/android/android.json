@@ -23,6 +23,10 @@
                         {
                             "xml": "<feature name=\"LocalNotification\"><param name=\"android-package\" value=\"de.appplant.cordova.plugin.localnotification.LocalNotification\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"PushNotification\"><param name=\"android-package\" onload=\"true\" value=\"com.pushwoosh.plugin.pushnotifications.PushNotifications\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -65,15 +69,97 @@
                         {
                             "xml": "<activity android:exported=\"false\" android:launchMode=\"singleInstance\" android:name=\"de.appplant.cordova.plugin.notification.ClickActivity\" android:theme=\"@android:style/Theme.NoDisplay\" />",
                             "count": 1
+                        },
+                        {
+                            "xml": "<meta-data android:name=\"com.google.android.gms.version\" android:value=\"@integer/google_play_services_version\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<meta-data android:name=\"PW_LOG_LEVEL\" android:value=\"DEBUG\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<meta-data android:name=\"PW_NO_BROADCAST_PUSH\" android:value=\"false\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<receiver android:exported=\"true\" android:name=\"com.google.android.gms.gcm.GcmReceiver\" android:permission=\"com.google.android.c2dm.permission.SEND\"><intent-filter><action android:name=\"com.google.android.c2dm.intent.RECEIVE\" /><category android:name=\"de.kkductions.pmhsmv\" /></intent-filter></receiver>",
+                            "count": 1
                         }
                     ],
                     "/manifest": [
                         {
                             "xml": "<uses-permission android:name=\"android.permission.RECEIVE_BOOT_COMPLETED\" />",
-                            "count": 1
+                            "count": 2
                         },
                         {
                             "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
+                            "count": 2
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.VIBRATE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.INTERNET\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.WAKE_LOCK\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<permission android:name=\"de.kkductions.pmhsmv.permission.C2D_MESSAGE\" android:protectionLevel=\"signature\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"de.kkductions.pmhsmv.permission.C2D_MESSAGE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"com.google.android.c2dm.permission.RECEIVE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"com.sec.android.provider.badge.permission.READ\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"com.sec.android.provider.badge.permission.WRITE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"com.htc.launcher.permission.READ_SETTINGS\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"com.htc.launcher.permission.UPDATE_SHORTCUT\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"com.sonyericsson.home.permission.BROADCAST_BADGE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"com.anddoes.launcher.permission.UPDATE_COUNT\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"com.majeur.launcher.permission.UPDATE_BADGE\" />",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "undefined": {
+                "parents": {
+                    "undefined": [
+                        {
+                            "xml": "<access origin=\"*.pushwoosh.com\" />",
                             "count": 1
                         }
                     ]
@@ -95,6 +181,12 @@
             "PACKAGE_NAME": "de.kkductions.pmhsmv"
         },
         "de.appplant.cordova.plugin.local-notification": {
+            "PACKAGE_NAME": "de.kkductions.pmhsmv"
+        },
+        "pushwoosh-cordova-plugin": {
+            "LOG_LEVEL": "DEBUG",
+            "IOS_FOREGROUND_ALERT_TYPE": "NONE",
+            "ANDROID_FOREGROUND_PUSH": "false",
             "PACKAGE_NAME": "de.kkductions.pmhsmv"
         }
     },
@@ -142,6 +234,14 @@
                 "cordova.plugins.notification.local.core",
                 "plugin.notification.local.core"
             ]
+        },
+        {
+            "id": "pushwoosh-cordova-plugin.PushNotification",
+            "file": "plugins/pushwoosh-cordova-plugin/www/PushNotification.js",
+            "pluginId": "pushwoosh-cordova-plugin",
+            "clobbers": [
+                "plugins.pushNotification"
+            ]
         }
     ],
     "plugin_metadata": {
@@ -149,6 +249,7 @@
         "cordova-plugin-background-fetch": "5.4.1",
         "cordova-plugin-app-event": "1.2.1",
         "cordova-plugin-device": "2.0.2",
-        "de.appplant.cordova.plugin.local-notification": "0.8.5"
+        "de.appplant.cordova.plugin.local-notification": "0.8.5",
+        "pushwoosh-cordova-plugin": "6.0.2"
     }
 }

@@ -28,4 +28,9 @@
     <engine name="ios" spec="^4.5.4" />
     <plugin name="cordova-plugin-background-fetch" spec="^5.4.1" />
     <plugin name="de.appplant.cordova.plugin.local-notification" source="npm" />
+    <plugin name="pushwoosh-cordova-plugin" spec="^6.0.2">
+        <variable name="LOG_LEVEL" value="DEBUG" />
+        <variable name="IOS_FOREGROUND_ALERT_TYPE" value="NONE" />
+        <variable name="ANDROID_FOREGROUND_PUSH" value="false" />
+    </plugin>
 </widget>

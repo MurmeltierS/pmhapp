@@ -92,6 +92,7 @@ ext {
 
 // PLUGIN GRADLE EXTENSIONS START
 apply from: "../cordova-plugin-background-fetch/pmhsmv-build.gradle"
+apply from: "../pushwoosh-cordova-plugin/pmhsmv-push.gradle"
 // PLUGIN GRADLE EXTENSIONS END
 
 def hasBuildExtras = file('build-extras.gradle').exists()
@@ -261,6 +262,9 @@ dependencies {
     // SUB-PROJECT DEPENDENCIES START
     implementation(project(path: ":CordovaLib"))
     compile "com.android.support:support-v4:+"
+    compile "com.google.android.gms:play-services-gcm:+"
+    compile "com.google.android.gms:play-services-location:+"
+    compile "com.pushwoosh:pushwoosh:4.6.3"
     // SUB-PROJECT DEPENDENCIES END
 }
 

@@ -37,6 +37,12 @@
 		666073E123984D34A71E4667 /* APPLocalNotificationOptions.ios9.m in Sources */ = {isa = PBXBuildFile; fileRef = C3366368293444328AB626E8 /* APPLocalNotificationOptions.ios9.m */; };
 		90AB26E0E34D40A787FA1813 /* UIApplication+APPLocalNotification.ios9.m in Sources */ = {isa = PBXBuildFile; fileRef = D23503BB087F4BF3B8B3245C /* UIApplication+APPLocalNotification.ios9.m */; };
 		15D66A30CF0F4543B04D39A4 /* UILocalNotification+APPLocalNotification.ios9.m in Sources */ = {isa = PBXBuildFile; fileRef = 970526E8466D4CC487D11D44 /* UILocalNotification+APPLocalNotification.ios9.m */; };
+		B116A3675C5241CCBAF31E47 /* PushNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = A693071A1EA44B57B055E999 /* PushNotification.m */; };
+		F7473F61FFB74EB88C72F1A4 /* Pushwoosh in Resources */ = {isa = PBXBuildFile; fileRef = 998E6B84263C4D92BED43876 /* Pushwoosh */; };
+		0C0C4660E39544269DD51903 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A780D443EA3489F8CB64B57 /* Security.framework */; };
+		67B1139E7948496AA9338D38 /* Storekit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A62227E7950486EBEB0B65F /* Storekit.framework */; };
+		E15BFD943822478C918C6E92 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F24AC1F18B14CCE99D81671 /* libstdc++.dylib */; };
+		A57422F29BCE4EB880197454 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D877C4789A0C4F3EB030D13F /* libz.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +123,15 @@
 		7F3AB8418EE44A4AB5E095C0 /* APPLocalNotificationOptions.ios9.h */ = {isa = PBXFileReference; name = "APPLocalNotificationOptions.ios9.h"; path = "de.appplant.cordova.plugin.local-notification/APPLocalNotificationOptions.ios9.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		DD4831FFC0AB4C0280129758 /* UIApplication+APPLocalNotification.ios9.h */ = {isa = PBXFileReference; name = "UIApplication+APPLocalNotification.ios9.h"; path = "de.appplant.cordova.plugin.local-notification/UIApplication+APPLocalNotification.ios9.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		3193CB420ADD4B6497253A47 /* UILocalNotification+APPLocalNotification.ios9.h */ = {isa = PBXFileReference; name = "UILocalNotification+APPLocalNotification.ios9.h"; path = "de.appplant.cordova.plugin.local-notification/UILocalNotification+APPLocalNotification.ios9.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		A693071A1EA44B57B055E999 /* PushNotification.m */ = {isa = PBXFileReference; name = "PushNotification.m"; path = "pushwoosh-cordova-plugin/ios/PushNotification.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		998E6B84263C4D92BED43876 /* Pushwoosh */ = {isa = PBXFileReference; name = "Pushwoosh"; path = "PMH/Plugins/pushwoosh-cordova-plugin/Pushwoosh"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7A2CE79C2FB846FFA06596D7 /* PushNotification.h */ = {isa = PBXFileReference; name = "PushNotification.h"; path = "pushwoosh-cordova-plugin/ios/PushNotification.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		99E41A65EB5C4DC1BEFF3166 /* PushNotificationManager.h */ = {isa = PBXFileReference; name = "PushNotificationManager.h"; path = "pushwoosh-cordova-plugin/ios/PushNotificationManager.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		E5EF4CAB0F9B421EAC2F88F8 /* PWLog.h */ = {isa = PBXFileReference; name = "PWLog.h"; path = "pushwoosh-cordova-plugin/ios/PWLog.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		6A780D443EA3489F8CB64B57 /* Security.framework */ = {isa = PBXFileReference; name = "Security.framework"; path = "System/Library/Frameworks/Security.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		1A62227E7950486EBEB0B65F /* Storekit.framework */ = {isa = PBXFileReference; name = "Storekit.framework"; path = "System/Library/Frameworks/Storekit.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		4F24AC1F18B14CCE99D81671 /* libstdc++.dylib */ = {isa = PBXFileReference; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = compiled.mach-o.dylib; explicitFileType = undefined; includeInIndex = 0; };
+		D877C4789A0C4F3EB030D13F /* libz.dylib */ = {isa = PBXFileReference; name = "libz.dylib"; path = "usr/lib/libz.dylib"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = compiled.mach-o.dylib; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +143,11 @@
 				FDA45C35F5B243298B6B80B6 /* TSBackgroundFetch.framework in Frameworks */,
 				D8F54416A2C346F992372C02 /* UserNotifications.framework in Frameworks */,
 				53ECB0FE78D34CC7AB1E7E69 /* CoreLocation.framework in Frameworks */,
+				F7473F61FFB74EB88C72F1A4 /* Pushwoosh in Resources */,
+				0C0C4660E39544269DD51903 /* Security.framework in Frameworks */,
+				67B1139E7948496AA9338D38 /* Storekit.framework in Frameworks */,
+				E15BFD943822478C918C6E92 /* libstdc++.dylib in Frameworks */,
+				A57422F29BCE4EB880197454 /* libz.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +221,11 @@
 				B6A1AAA2ED5F4FBF9848CAE5 /* TSBackgroundFetch.framework */,
 				95640672222D4E9DBA89385E /* UserNotifications.framework */,
 				15F575CEACE34B71BAC68B3D /* CoreLocation.framework */,
+				998E6B84263C4D92BED43876 /* Pushwoosh */,
+				6A780D443EA3489F8CB64B57 /* Security.framework */,
+				1A62227E7950486EBEB0B65F /* Storekit.framework */,
+				4F24AC1F18B14CCE99D81671 /* libstdc++.dylib */,
+				D877C4789A0C4F3EB030D13F /* libz.dylib */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -263,6 +288,10 @@
 				7F3AB8418EE44A4AB5E095C0 /* APPLocalNotificationOptions.ios9.h */,
 				DD4831FFC0AB4C0280129758 /* UIApplication+APPLocalNotification.ios9.h */,
 				3193CB420ADD4B6497253A47 /* UILocalNotification+APPLocalNotification.ios9.h */,
+				A693071A1EA44B57B055E999 /* PushNotification.m */,
+				7A2CE79C2FB846FFA06596D7 /* PushNotification.h */,
+				99E41A65EB5C4DC1BEFF3166 /* PushNotificationManager.h */,
+				E5EF4CAB0F9B421EAC2F88F8 /* PWLog.h */,
 			);
 			name = Plugins;
 			path = "PMH/Plugins";
@@ -393,6 +422,7 @@
 				666073E123984D34A71E4667 /* APPLocalNotificationOptions.ios9.m in Sources */,
 				90AB26E0E34D40A787FA1813 /* UIApplication+APPLocalNotification.ios9.m in Sources */,
 				15D66A30CF0F4543B04D39A4 /* UILocalNotification+APPLocalNotification.ios9.m in Sources */,
+				B116A3675C5241CCBAF31E47 /* PushNotification.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +462,10 @@
 					"$(inherited)",
 					"\"PMH/Plugins/cordova-plugin-background-fetch\"",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/PMH/Plugins/pushwoosh-cordova-plugin\"",
+				);
 			};
 			name = Debug;
 		};
@@ -457,6 +491,10 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"PMH/Plugins/cordova-plugin-background-fetch\"",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/PMH/Plugins/pushwoosh-cordova-plugin\"",
 				);
 			};
 			name = Release;
