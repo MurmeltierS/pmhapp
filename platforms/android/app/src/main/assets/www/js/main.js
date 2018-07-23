@@ -105,7 +105,7 @@ document.addEventListener("app.Ready", onAppReady, false);
 function onAppReady() {
     alert("device ready");
     var BackgroundFetch = window.BackgroundFetch;
-
+    alert(JSON.stringify(BackgroundFetch));
     // Your background-fetch handler.
     var fetchCallback = function() {
         test++;
@@ -133,4 +133,6 @@ function onAppReady() {
         startOnBoot: true, // <-- Android only
         forceReload: true // <-- Android only
     });
+
+    alert(JSON.stringify(BackgroundFetch));
 }

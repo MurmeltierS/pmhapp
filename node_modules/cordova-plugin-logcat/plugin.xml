@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="cordova-plugin-logcat"
+        version="0.0.1">
+
+  <name>Log Cat</name>
+  <description>A Cordova plugin to send logs to the developer</description>
+<engines>
+        <engine name="cordova" version=">=3.0.0" />
+</engines>
+
+    <js-module src="www/logcat.js" name="LogCat">
+    <clobbers target="plugin.logcat" />
+  </js-module>
+
+  <!-- android -->
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="LogCat">
+        <param name="android-package" value="org.apache.cordova.logcat.LogCat" />
+        <param name="onload" value="true" />
+      </feature>
+    </config-file>
+    <source-file src="src/android/LogCat.java" target-dir="src/org/apache/cordova/logcat" />
+  </platform>
+    
+    <!-- ios -->
+<platform name="ios">
+    <info>
+open xcode go into settings change `deployment target` to 7.0 or above and add `[Project Name]/Plugins/com.example.hello/Bridging-Header.h` to Objective-c Bridging Header under the Swift Compiler - Code Generation options      
+    </info>
+    <config-file target="config.xml" parent="/*">
+      <feature name="LogCat">
+        <param name="ios-package" value="LogCat"/>
+      </feature>
+    </config-file>
+    <header-file src="src/ios/LogCat.h" target-dir="cordova-plugin-logcat" />
+    <source-file src="src/ios/LogCat.m" target-dir="cordova-plugin-logcat" />
+  </platform>
+ 
+</plugin>
