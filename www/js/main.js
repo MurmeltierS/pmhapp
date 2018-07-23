@@ -111,14 +111,14 @@ function onAppReady() {
         alert(JSON.stringify(BackgroundFetch));
         // Your background-fetch handler.
         var fetchCallback = function() {
-            test++;
+            
             cordova.plugins.notification.local.schedule({
                 title: 'Background notification',
                 text: 'Thats pretty easy...',
                 foreground: true
             });
             console.log('[js] BackgroundFetch event received');
-
+            test++;
             // Required: Signal completion of your task to native code
             // If you fail to do this, the OS can terminate your app
             // or assign battery-blame for consuming too much background-time
