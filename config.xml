@@ -25,8 +25,7 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
-    <engine name="android" spec="^7.0.0" />
-    <engine name="ios" spec="^4.5.4" />
+
     <plugin name="cordova-plugin-background-fetch" source="npm" />
     <plugin name="de.appplant.cordova.plugin.local-notification" source="npm" />
     <plugin name="pushwoosh-cordova-plugin" spec="^6.0.2">
