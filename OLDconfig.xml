@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="de.kkductions.pmhsmv" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>PMH</name>
+    <description>
+        A sample Apache Cordova application that responds to the deviceready event.
+    </description>
+    <author email="dev@cordova.apache.org" href="http://cordova.io">
+        Apache Cordova Team
+    </author>
+    <preference name="phonegap-version" value="cli-7.1.0" />
+    <preference name="android-minSdkVersion" value="21" />
+    <content src="index.html" />
+    <plugin name="cordova-plugin-whitelist" spec="1" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+
+    <plugin name="cordova-plugin-background-fetch" source="npm" />
+    <plugin name="de.appplant.cordova.plugin.local-notification" source="npm" />
+    <plugin name="pushwoosh-cordova-plugin" spec="^6.0.2">
+        <variable name="LOG_LEVEL" value="DEBUG" />
+        <variable name="IOS_FOREGROUND_ALERT_TYPE" value="NONE" />
+        <variable name="ANDROID_FOREGROUND_PUSH" value="false" />
+    </plugin>
+</widget>
