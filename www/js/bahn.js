@@ -32,7 +32,7 @@ class Bahn {
         cr++;
 
         var tr = document.querySelector("#bahn").querySelectorAll("tr");
-        Popup.open(tr.innerHTML);
+        //Popup.open(tr[1].innerHTML);
         cr++;
         for (var i = 1; i < tr.length; i++) {
             try {

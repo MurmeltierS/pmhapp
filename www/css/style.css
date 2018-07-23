@@ -447,6 +447,8 @@ select {
     left: -20000vw;
 }
 
+
+
 #bahn tr {
     height: 2.6rem;
 }
@@ -491,6 +493,7 @@ select {
 
 #bahn table {
     width: calc(100% - 15px);
+    table-layout: fixed;
 }
 
 
